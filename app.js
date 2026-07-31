@@ -33,7 +33,7 @@ async function main() {
 };
 
 app.get("/" , (req , res) => {
-    res.send("HI Im the Root");    
+    res.render("./listings/index.ejs" , {allListings});    
 });
 
 
