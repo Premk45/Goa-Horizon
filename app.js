@@ -32,10 +32,11 @@ async function main() {
     await mongoose.connect(MONGO_URL);
 };
 
-app.get("/" , (req , res) => {
-    res.render("./listings/index.ejs" , {allListings});    
+// Index Route
+app.get("/" , async (req , res) => {
+    const allListings = await Listing.find({});
+    res.render("./listings/index.ejs" , {allListings});  
 });
-
 
 // Index Route
 app.get("/listings" , async (req , res) => {
