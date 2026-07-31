@@ -1,0 +1,652 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<!-- Video And Form -->
+<div class="hero-container">
+    <!-- वीडियो टैग (सारे एट्रीब्यूट्स क्लास से बाहर निकाल दिए गए हैं) -->
+    <video id="my-video" class="bg-video" preload="auto" autoplay loop muted playsinline>
+        <source src="/videos/Beach_Sea.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <div class="content-wrapper">
+        <span class="sub-heading">YOUR GOA TRAVEL PARTNER</span>
+        <h1 class="main-headingv">Discover the magic <br><span>of Goa</span></h1>
+        <p class="descriptionp">Comfortable rides, trusted drivers, and full-day North & South Goa tours — book in minutes on WhatsApp.</p>
+
+        <!-- Form me onsubmit event add kiya gaya hai -->
+        <form class="booking-form" onsubmit="sendToWhatsApp(event)">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp</label>
+                    <input type="tel" id="phone" placeholder="+91 ..." required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Travel date</label>
+                    <input type="date" id="date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Guests</label>
+                <select id="guests">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Persons</option>
+                    <option value="3">3-5 Persons</option>
+                    <option value="6">6+ Persons</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service</label>
+                <select id="service">
+                    <option value="north-south">North & South Goa Sightseeing</option>
+                    <option value="north">North Goa Tour Only</option>
+                    <option value="south">South Goa Tour Only</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn" onclick="sendToWhatsApp(event)">Get details on WhatsApp</button>
+        </form>
+    </div>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            
+            <div class="stat-item">
+                <h2 class="stat-number color-yellow">10,000<sup>+</sup></h2>
+                <p class="stat-label">Happy riders</p>
+            </div>
+
+            <div class="stat-item">
+                <h2 class="stat-number">4.9 <span class="star-icon">★</span></h2>
+                <p class="stat-label">Average rating</p>
+            </div>
+
+            <div class="stat-item">
+                <h2 class="stat-number">AC</h2>
+                <p class="stat-label">Fleet</p>
+            </div>
+
+            <div class="stat-item">
+                <h2 class="stat-number">24/7</h2>
+                <p class="stat-label">WhatsApp</p>
+            </div>
+
+        </div>
+    </section>
+
+
+</div>
+
+<!-- SECTION 1: QUICK ACCESS TAGS -->
+<section class="quick-access-section">
+    <h3 class="section-title">QUICK ACCESS</h3>
+    <div class="tags-container">
+        <a href="/listings/north-goa" class="tag-btn">North Goa Tour</a>
+        <a href="/listings/south-goa" class="tag-btn">South Goa Tour</a>
+        <a href="/listings/airport" class="tag-btn">Airport Pickup</a>
+        <a href="/listings/booknow" class="tag-btn">Taxi Booking</a>
+        <a href="/listings/fleet"  class="tag-btn">Our Fleet</a>
+        <a href="#dudhsagar-details" class="tag-btn">Dudhsagar</a>
+        <a href="/listings/custom"  class="tag-btn">Custom Tour</a>
+        <a href="/listings/review" class="tag-btn">Reviews</a>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- SECTION 2: INFO CARD SECTION -->
+<section class="info-card-section">
+    <div class="temple-container">
+        
+        <!-- Left Side: Image Card with Shadow & Border Radius -->
+        <div class="image-card">
+            <!-- Apni image ka path yahan dalein -->
+            <img src="/images/temple.jpg" alt="Goa Temple">
+        </div>
+
+        <!-- Right Side: Content Details -->
+        <div class="content-side">
+            <span class="sub-title">GOA TRAVEL EXPERTS</span>
+            <h2 class="main-heading">Your trusted partner on the road</h2>
+            <p class="description">
+                From first airport pickup to your last sunset drive, we focus on one thing: making your Goa trip easy. Local drivers, clean AC vehicles, and itineraries you can actually change on the day.
+            </p>
+
+            <!-- Features List -->
+            <ul class="features-list">
+                <li>
+                    <span class="icon">🛡️</span> 
+                    Goa-based team with route know-how
+                </li>
+                <li>
+                    <span class="icon">🛡️</span> 
+                    Best-value quotes for the vehicle class you need
+                </li>
+                <li>
+                    <span class="icon">🛡️</span> 
+                    Verified, experienced drivers
+                </li>
+                <li>
+                    <span class="icon">🛡️</span> 
+                    WhatsApp booking in minutes
+                </li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="btn-group">
+                <a href="/listings/contact"  class="btn btn-primary">Get in touch</a>
+                <a href="/listings/about" class="btn btn-secondary">About us</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="parent-container">
+    <% for(let listing of allListings){ %>   
+    <div class="t-card">
+        <div class="card-image-area images">
+            <span class="badge-popular">Popular</span>
+            <img class="images" src="<%= listing.Image.url %>" alt="listing image">
+        </div>
+        
+        <div class="card-body">
+            <h3 class="card-title"><%= listing.Title %></h3>
+            <p class="card-description">
+                <%= listing.Description %>
+            </p>
+            <div class="card-rate-info"> 
+                <%= listing.Package_Type %> 
+            </div>
+            
+            <div class="card-actions">
+                <% if (listing.Title === 'Goa Airport Pickup & Drop') { %>
+                    <a href="/listings/airport" class="btn btn-view">View details</a>
+        
+                <% } else if (listing.Title === 'Create Your Own Goa Tour') { %>
+                    <a href="/listings/custom" class="btn btn-view">View details</a>
+                    
+                <% } else if (listing.Title === 'Tempo & Group Travel') { %>
+                    <a href="/listings/fleet" class="btn btn-view">View details</a>
+
+                <% } else if (listing.Title === 'South Goa Tour') { %>
+                    <a href="/listings/south-goa" class="btn btn-view">View details</a>
+
+                <% } else if (listing.Title === 'North Goa Tour') { %>
+                    <a href="/listings/north-goa" class="btn btn-view">View details</a>    
+
+                <% } else { %>
+                    <a href="/listings/<%= listing._id %>" class="btn btn-view">View details</a>
+                    
+                <% } %>
+                <a class="btn btn-book" 
+                    onclick="bookSingleService('<%= listing.Title %>')">
+                    Book now
+                </a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+
+
+
+<section class="tour-packages-section">
+    <div class="packages-container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <span class="header-subtitle">TOUR PACKAGES</span>
+            <h2 class="header-title">Best day plans for Goa</h2>
+            <p class="header-desc">Fixed ideas, flexible execution — tell us your hotel and dates for an exact quote.</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="packages-grid">
+            
+            <!-- Card 1 -->
+            <div class="package-card">
+                <span class="card-tag">FULL DAY</span>
+                <h3 class="card-title">North Goa Explorer</h3>
+                <p class="card-desc">Beaches, forts, and coastal highlights in one relaxed day.</p>
+                <ul class="card-features">
+                    <li><span class="icon-smile"></span> AC private vehicle</li>
+                    <li><span class="icon-smile"></span> Hotel pickup & drop</li>
+                    <li><span class="icon-smile"></span> Local driver-guide</li>
+                    <li><span class="icon-smile"></span> Flexible stops</li>
+                </ul>
+                <div class="card-price">
+                    <span class="strike-text">Package from</span> <span class="line-dash">——</span> <span class="quote-text">ask for quote</span>
+                </div>
+                <a href="/listings/north-goa">
+                    <button class="plan-btn" >Plan this package</button>
+                </a>
+            </div>
+
+            <!-- Card 2 (Featured / Highlighted) -->
+            <div class="package-card featured">
+                <span class="card-tag">MOST BOOKED</span>
+                <h3 class="card-title">South Goa Complete</h3>
+                <p class="card-desc">Heritage, spice farm, cruise, and Panjim-area sights.</p>
+                <ul class="card-features">
+                    <li><span class="icon-smile"></span> Churches & temples</li>
+                    <li><span class="icon-smile"></span> Spice plantation + lunch</li>
+                    <li><span class="icon-smile"></span> Boat cruise slot</li>
+                    <li><span class="icon-smile"></span> Miramar & coastal views</li>
+                </ul>
+                <div class="card-price">
+                    <span class="strike-text">Package from</span> <span class="line-dash">——</span> <span class="quote-text">ask for quote</span>
+                </div>
+                <a href="/listings/south-goa">
+                    <button class="plan-btn featured-btn">Plan this package</button>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="package-card">
+                <span class="card-tag">ARRIVALS</span>
+                <h3 class="card-title">Airport Express</h3>
+                <p class="card-desc">Straight from the terminal to your hotel — any time, any day.</p>
+                <ul class="card-features">
+                    <li><span class="icon-smile"></span> GOI & Mopa</li>
+                    <li><span class="icon-smile"></span> Luggage-friendly vehicles</li>
+                    <li><span class="icon-smile"></span> WhatsApp booking</li>
+                    <li><span class="icon-smile"></span> Transparent pricing</li>
+                </ul>
+                <div class="card-price">
+                    <span class="strike-text">Package from</span> <span class="line-dash">——</span> <span class="quote-text">ask for quote</span>
+                </div>
+                <a href="/listings/airport">
+                    <button class="plan-btn">Plan this package</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="why-choose-us-section">
+    <!-- Top Dark Section -->
+    <div class="dark-features-area">
+        <div class="features-container">
+            
+            <!-- Section Header -->
+            <div class="features-header">
+                <span class="features-subtitle">WHY GOA HORIZON TRAVELS</span>
+                <h2 class="features-title">We go beyond a simple cab ride</h2>
+                <p class="features-desc">The same care you'd expect from a premium holiday operator — focused on transport done right.</p>
+            </div>
+
+            <!-- 6 Cards Grid -->
+            <div class="features-grid-dark">
+                <!-- Card 1 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h4>Fair, clear pricing</h4>
+                    <p>Quotes explained upfront — no surprise charges on the day.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h4>Local experts</h4>
+                    <p>Drivers who know shortcuts, parking, and the best photo stops.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>Punctual pickups</h4>
+                    <p>We respect flight times, checkout, and your itinerary.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                    </div>
+                    <h4>24/7 support</h4>
+                    <p>Reach us on call or WhatsApp whenever you need assistance.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4>Trusted fleet</h4>
+                    <p>Clean, maintained AC cars — sedan, Innova Crysta, Tempo Traveller.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="dark-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h4>Safe travel</h4>
+                    <p>Professional, courteous drivers — especially important for families and solo travellers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Gradient Banner -->
+    <div class="promo-banner-area">
+        <div class="promo-container">
+            <!-- Left Text -->
+            <div class="promo-text">
+                <span class="promo-badge">LIMITED TIME</span>
+                <h3>Book this week — priority vehicle assignment</h3>
+                <p>Peak season fills fast. Message us with your dates to lock in an Innova or Tempo before slots run out.</p>
+            </div>
+            
+            <!-- Center Timer -->
+            <div class="promo-timer">
+                <div class="timer-box">
+                    <span id="t-hours">00</span><span class="colon">:</span>
+                    <span id="t-mins">00</span><span class="colon">:</span>
+                    <span id="t-secs">00</span>
+                    <span class="timer-label">left today</span>
+                </div>
+            </div>
+            
+            <!-- Right Button -->
+            <div class="promo-action">
+                <button class="grab-btn" onclick="bookSingleService(`Hi! I'd like to book — asking about this week's availability.`)">Grab this slot</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+            <span class="header-subtitle">REAL EXPERIENCES</span>
+            <h2 class="header-title">Travellers who chose us</h2>
+            <p class="header-desc">A few words from recent guests — see all stories on our reviews page.</p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="testimonials-grid">
+            
+            <!-- Review Card 1 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                </div>
+                <p class="review-text">"North Goa tour was incredible — our driver knew every viewpoint and timing for sunset."</p>
+                <div class="reviewer-info">
+                    <strong>Sarah J.</strong>
+                    <span>London &middot; North Goa Tour</span>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                </div>
+                <p class="review-text">"Airport pickup to South Goa tour — seamless. Spice plantation was the highlight."</p>
+                <div class="reviewer-info">
+                    <strong>Priya P.</strong>
+                    <span>Delhi &middot; South Goa Tour</span>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                </div>
+                <p class="review-text">"Group of eight in a Tempo Traveller — comfortable all day, great communication on WhatsApp."</p>
+                <div class="reviewer-info">
+                    <strong>James W.</strong>
+                    <span>Sydney &middot; Group tour</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Action Button -->
+        <div class="testimonials-action">
+            <a href="/listings/review">
+                <button class="read-all-btn">Read all reviews</button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="faq-section">
+    <div class="faq-container">
+        
+        <!-- FAQ Header -->
+        <div class="faq-header">
+            <span class="faq-subtitle">FAQ</span>
+            <h2 class="faq-title">Frequently asked questions</h2>
+        </div>
+
+        <!-- FAQ Box containing all questions -->
+        <div class="faq-box">
+            
+            <!-- Question 1 (Open by default) -->
+            <div class="faq-item active">
+                <button class="faq-question">
+                    How do I book a taxi or tour?
+                    <svg class="icon-chevron" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Use the form on this page, WhatsApp us, or call +91 96321 90350. Tell us your dates, pickup point, and vehicle preference — we confirm quickly.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you serve Mopa and Dabolim airports?
+                    <svg class="icon-chevron" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We provide pickups and drops for both Goa airports as well as railway stations — share your flight or train details for smooth coordination.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can we change the tour route on the day?
+                    <svg class="icon-chevron" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. Our North and South Goa plans are suggested itineraries. You can adjust stops with your driver within the time you have booked.</p>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    What vehicles do you offer?
+                    <svg class="icon-chevron" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Sedan, Toyota Innova Crysta (7+1), Tempo Traveller (24+1), and more — see Our Fleet for photos and details.</p>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is Goa safe for solo and family travellers?
+                    <svg class="icon-chevron" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We assign professional drivers and focus on safe, comfortable rides. Many families and solo travellers book with us — read reviews for real experiences.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="ride-section">
+    <div class="ride-container">
+        
+        <!-- Header Section -->
+        <div class="ride-header">
+            <h2 class="ride-title">Choose your ride</h2>
+            <a href="/listings/fleet" class="view-all-btn">View all vehicles</a>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="ride-grid">
+            
+            <!-- Ride Item 1 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop" alt="Bus">
+            </div>
+
+            <!-- Ride Item 2 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=500&auto=format&fit=crop" alt="Mini Bus">
+            </div>
+
+            <!-- Ride Item 3 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1517436073-3b1b16d9ecfb?w=500&auto=format&fit=crop" alt="Tempo Traveller">
+            </div>
+
+            <!-- Ride Item 4 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1621007947382-d3117da598ed?w=500&auto=format&fit=crop" alt="Tempo Traveller">
+            </div>
+
+            <!-- Ride Item 5 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=500&auto=format&fit=crop" alt="Innova Crysta">
+            </div>
+
+            <!-- Ride Item 6 -->
+            <div class="ride-item">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&auto=format&fit=crop" alt="Tempo Traveller">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="moments-section" id="dudhsagar-details">
+    <div class="moments-container">
+        
+        <!-- Header Section -->
+        <div class="moments-header">
+            <span class="moments-subtitle">GOA MOMENTS</span>
+            <h2 class="moments-title">See Goa in a few seconds</h2>
+            <p class="moments-desc">Short clips from the road — including Dudhsagar — to feel the trip before you land.</p>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="moments-grid">
+            
+            <!-- Video Card 1 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Aap 'src' me apne .mp4 video ka link daal sakte hain -->
+                    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=400&auto=format&fit=crop">
+                        <source src="your-video-link-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    Coastal drives & coconut trees
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=400&auto=format&fit=crop">
+                        <source src="your-video-link-2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    City vibes & night lights
+                </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1590050752117-238cb12ae7bc?q=80&w=400&auto=format&fit=crop">
+                        <source src="your-video-link-3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    Water views & sunsets
+                </div>
+            </div>
+
+            <!-- Video Card 4 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1623910271000-4b684cb2c8b0?q=80&w=400&auto=format&fit=crop">
+                        <source src="your-video-link-4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-caption">
+                    Dudhsagar Falls
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="cta-banner-section">
+    <div class="cta-banner-container">
+        
+        <!-- Text Content -->
+        <h2 class="cta-banner-title">Plan your Goa trip today</h2>
+        <p class="cta-banner-desc">One message on WhatsApp is enough to get started — we'll suggest vehicle, route, and timing.</p>
+        
+        <!-- Buttons -->
+        <div class="cta-buttons">
+            <!-- WhatsApp Button -->
+            <a target="_blank" class="btn-whatsapp" onclick="bookSingleService(`Hi! I'd like to plan my Goa trip.`)">
+                WhatsApp us
+            </a>
+            
+            <!-- Call Now Button (tel: link directly opens phone dialer) -->
+            <a href="tel:+919632190350" class="btn-call">
+                <!-- Phone SVG Icon -->
+                <svg class="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Call now
+            </a>
+        </div>
+        
+    </div>
+</section>

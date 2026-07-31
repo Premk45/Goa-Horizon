@@ -1,0 +1,241 @@
+.about-header-banner {
+    position: relative;
+    width: 100%;
+    min-height: 380px; /* Banner height */
+    
+    /* Perfect Flexbox Centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Background Image + Blue Overlay */
+    background: linear-gradient(135deg, rgba(32, 147, 196, 0.88) 0%, rgba(30, 85, 105, 0.82) 100%), 
+                url('/images/temple.jpg') center/cover no-repeat;
+                
+    color: #ffffff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Inner Box Container */
+.banner-content {
+    max-width: 650px; /* Content width limit so text wraps nicely */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Subtitle (WHAT WE OFFER) */
+.banner-content .subtitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* Main Title (Services) */
+.banner-content .main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Georgia', serif; /* Image jaisa stylish serif font */
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+}
+
+/* Paragraph Description */
+.banner-content .descriptiona {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.our-story-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Arial, sans-serif; /* Ya aapki theme ka font */
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a3c40 !important; /* Heading ka Dark Blue/Teal Color */
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif; /* Image wali stylish serif font ke liye */
+}
+
+.story-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a5568; /* Light dark readable body text */
+  text-align: left; /* Image ke according left aligned text */
+  margin-bottom: 24px;
+}
+
+/* Section Container */
+.values-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8fafc; /* Subtle off-white background */
+  font-family: Arial, sans-serif;
+}
+
+/* Subtitle (WHAT WE STAND FOR) */
+.values-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #25a5d8; /* Light Sky Blue */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Title (Our Values) */
+.values-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a3c40 !important; /* Dark Teal / Navy */
+  font-family: 'Georgia', serif;
+  margin: 0 0 40px 0;
+}
+
+/* Responsive Grid for Cards */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.value-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); /* Soft shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Circle around Icon */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid #25a5d8; /* Light Blue Border */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+/* Card Heading */
+.value-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a3c40;
+  font-family: 'Georgia', serif;
+  margin: 0 0 12px 0;
+}
+
+/* Card Text */
+.value-card p {
+  font-size: 0.9rem;
+  color: #64748b; /* Soft gray text */
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* Banner Container */
+.cta-banner {
+  background-color: #2bb3ed; /* Vibrant Sky Blue Background */
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin-bottom: 0 !important;
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Car Icon */
+.cta-icon {
+  margin-bottom: 15px;
+}
+
+/* Main Heading */
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+}
+
+/* Description Text */
+.cta-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 28px 0;
+  opacity: 0.95;
+}
+
+/* Buttons Alignment */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Base Button Style */
+.cta-buttons .btn_about {
+  padding: 10px 28px;
+  border-radius: 25px; /* Pill-shaped buttons */
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+/* White Button (Book Now) */
+.btn_white {
+  background-color: #ffffff;
+  color: #2bb3ed;
+  border: 2px solid #ffffff;
+  width: 100px !important;
+}
+
+.btn_white:hover {
+  background-color: #f0f0f0;
+  color: #1c93c7;
+}
+
+/* Outline Dark Blue Button (Contact Us) */
+.btn_outline {
+  background-color: #1d5fa0; /* Darker Blue Fill */
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #174b80;
+}

@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container my-4 booking-form newform">
+  <h2>Edit Your Listing</h2>
+  
+  <form method="POST" action="/listings/<%= listing.id %>?_method=PUT"  
+        enctype="multipart/form-data" 
+        class="package-form "
+  >
+    
+    <!-- Image Upload -->
+    <div class="form-group mb-3 ">
+      <label for="image" class="form-label newlable">Image:</label>
+      <input 
+        type="file" 
+        class="form-control"
+        id="Image" 
+        name="listing[Image]" 
+        accept="image/*" 
+        required
+      />
+    </div>
+
+    <!-- Title -->
+    <div class="form-group mb-3">
+      <label for="title" class="form-label newlable">Title:</label>
+      <input 
+        name="listing[Title]"
+        type="text" 
+        class="form-control"
+        id="Title" 
+        value = "<%= listing.Title %>" 
+        value="<%= typeof title !== 'undefined' ? title : '' %>" 
+        required
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="form-group mb-3">
+      <label for="description" class="form-label newlable">Description:</label>
+      <textarea 
+        class="form-control"
+        id="Description" 
+        name="listing[Description]" 
+        rows="4" 
+        required
+      >
+        <%= typeof description !== 'undefined' ? description : '' %> 
+        <%= listing.Description %> 
+      </textarea>
+    </div>
+
+    <!-- Package Type -->
+    <div class="form-group mb-3">
+      <label for="description" class="form-label newlable">Package Type:</label>
+      <textarea 
+        class="form-control"
+        id="Package_Type" 
+        name="listing[Package_Type]" 
+        rows="4"  
+        required
+      >
+        <%= typeof description !== 'undefined' ? description : '' %>
+        <%= listing.Package_Type %>
+      </textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Update</button>
+
+  </form>
+</div>

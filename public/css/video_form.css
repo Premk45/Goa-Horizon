@@ -1,0 +1,239 @@
+/* Hero Container styling */
+.hero-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+/* New Form Adding */
+.newform {
+    background-color: #3B6377 !important;
+}
+
+.newlable ,h2{
+    color: #ffffff !important;
+}
+
+/* Background Video styling */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Image jaisa blue-ish dark overlay effect */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(15, 76, 117, 0.7), rgba(43, 43, 43, 0.6));
+    z-index: -1;
+}
+
+/* Content Wrapper (Centered) */
+.content-wrapper {
+    text-align: center;
+    color: #ffffff;
+    max-width: 550px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Typography */
+.sub-heading {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.main-headingv {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.main-headingv span {
+    color: #ffcc00; /* Goa text highlight color */
+}
+
+.descriptionp {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* --- FORM CONTAINER STYLING --- */
+.booking-form {
+    background: #ffffff;
+    color: #333333;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    /* Box shadow ko thoda halka aur premium kiya image ke mutabik */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    text-align: left;
+    margin-bottom: 20px;
+    max-width: 550px; /* Form ko ek perfect width dene ke liye */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- FORM GROUP (Label aur Input ko ek ke niche ek lane ke liye) --- */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Label upar aur Input niche aane ke liye sahi kiya */
+}
+
+/* --- LABELS STYLING --- */
+.booking-form label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555555;
+    margin-bottom: 8px; /* Label aur box ke beech ka gap */
+}
+
+/* --- INPUTS & SELECT BOXES STYLING (Yahan saari missing styling add ki hai) --- */
+.booking-form input[type="text"],
+.booking-form input[type="tel"],
+.booking-form input[type="date"],
+.booking-form select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #333333;
+    border: 1px solid #cccccc; /* Halka border jaise image me hai */
+    border-radius: 6px; /* Halka sa round corner */
+    background-color: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder text color */
+.booking-form ::placeholder {
+    color: #999999;
+}
+
+/* Focus effect (Jab user box par click karega) */
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #00b660; /* WhatsApp green focus border */
+}
+
+/* --- FORM ROW (Phone aur Date ek line me lane ke liye) --- */
+.form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Dono fields ke beech ka perfect gap */
+}
+
+.form-row .form-group {
+    flex: 1; /* Dono boxes ko barabar width dega */
+}
+
+/* --- WHATSAPP BUTTON STYLING --- */
+.submit-btn {
+    width: 100%;
+    background-color: #00b660; /* Image jaisa exact WhatsApp Green */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #009e52; /* Hover par thoda dark green */
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #00b368; /* Focus color matching WhatsApp green */
+}
+
+/* WhatsApp Style Green Button */
+.submit-btn {
+    width: 100%;
+    background: #00b368;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #009656;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .hero-container .bg-video .booking-form .content-wrapper .video-overlay {
+        font-size: 2rem;
+    }
+    .hero-container .bg-video .booking-form .content-wrapper .video-overlay{
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* --- RESPONSIVENESS (Mobile Check) --- */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Mobile screen par phone aur date ek ke niche ek aa jayenge */
+        gap: 0;
+    }
+}

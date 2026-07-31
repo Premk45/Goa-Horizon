@@ -1,0 +1,159 @@
+/* 1. Yeh CSS Cards ke sabse Bahar wale (Parent) Wrapper Div par lagayein */
+.parent-container {
+    display: flex;
+    flex-wrap: wrap;       /* Isse 3 se zyada cards automatic niche wali line me chale jayenge */
+    gap: 20px;             /* Cards ke beech ka gap (hissab se adjust karein) */
+    width: 100%;
+    justify-content: center;
+    padding: 10px 10px;
+    /* margin-left: 10px; */
+}
+
+/* Main Card Container */
+.t-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px; /* Perfect width for a single card layout */
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+    flex: 1 1 calc(33.333% - 20px);  
+}
+
+/* Top Image Area */
+.card-image-area {
+    width: 100%;         /* Image card ki poori chaudai legi */
+    height: 180px;       /* Sabhi images ki height ek jaisi (fix) ho jayegi */
+    object-fit: cover;   /* TRICK: Isse image stretch ya zoom nahi hogi, perfectly crop ho jayegi */
+    object-position: center;
+}
+
+.images{
+     width: 100%;         /* Image card ki poori chaudai legi */
+    height: 180px;       /* Sabhi images ki height ek jaisi (fix) ho jayegi */
+    object-fit: cover;   /* TRICK: Isse image stretch ya zoom nahi hogi, perfectly crop ho jayegi */
+    object-position: center;
+}
+
+/* Floating Popular Badge */
+.badge-popular {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #f59e0b; /* Orange color matching your image */
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Content Area */
+.card-body {
+    /* padding: 24px; */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Taki body poori available height le sake */
+    padding: 15px;
+    flex-grow: 1;
+}
+
+/* Serif Title */
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #0c3953; /* Deep navy blue */
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* Description Paragraph */
+.card-description {
+    font-size: 14px;
+    color: #64748b; /* Soft gray-blue */
+    line-height: 1.6;
+    flex-grow: 1; /* TRICK: Yeh ek spring ki tarah kaam karega aur buttons ko end me push karega */
+    margin-bottom: 15px; /* Description aur package info ke beech ka gap */
+}
+
+/* Rate Text */
+.card-rate-info {
+    font-size: 14px;
+    color: #0284c7; /* Light blue info text */
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Button Group Container */
+.card-actions {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* General Button Styling */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* View Details Button (Orange) */
+.btn-view {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+
+/* Book Now Button (Green) */
+.btn-book {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+/* Hover effect for cleaner look */
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.temple-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: center;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.image-card{
+    margin-right: 40px;
+}
+
+/* 3. Mobile screen par layout set rakhne ke liye */
+@media (max-width: 900px) {
+    .parent-container .t-card {
+        flex: 1 1 100%;    /* Mobile par 1 row me 1 hi card dikhega */
+    }
+}

@@ -1,0 +1,140 @@
+<% layout("/layouts/boilerplate") %>
+<section class="fleet-hero-banner">
+  <div class="fleet-banner-content">
+    <span class="fleet-subtitle">CARS & BUSES</span>
+    <h1 class="fleet-title">Our Fleet</h1>
+    <p class="fleet-description">
+      Choose your ride. Well-maintained cars and buses for taxi, airport transfers, and tours across Goa.
+    </p>
+    
+    <div class="fleet-buttons">
+      <a href="/listings/booknow" class="btn btn-fleet-orange">Book Now</a>
+      <a href="/listings/contact" class="btn btn-fleet-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="fleet-browse-section">
+  <!-- Header -->
+  <div class="fleet-browse-header">
+    <span class="subtitle">OUR FLEET</span>
+    <h2 class="title">Browse Vehicles</h2>
+    <p class="description">Tap any vehicle to view it in full size. Search by name or filter by category.</p>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="filter-pills-container">
+    <button class="filter-btn active" onclick="filterFleet('all', this)">All</button>
+    <button class="filter-btn" onclick="filterFleet('suv', this)">SUV</button>
+    <button class="filter-btn" onclick="filterFleet('sedan', this)">Sedan</button>
+    <button class="filter-btn" onclick="filterFleet('hatchback', this)">Hatchback</button>
+    <button class="filter-btn" onclick="filterFleet('premium', this)">Premium</button>
+    <button class="filter-btn" onclick="filterFleet('tempo', this)">Tempo</button>
+    <button class="filter-btn" onclick="filterFleet('bus', this)">Bus</button>
+    <button class="filter-btn" onclick="filterFleet('group', this)">Group</button>
+  </div>
+
+  <!-- Vehicle Cards Grid -->
+  <div class="fleet-cards-grid">
+    
+    <!-- Card 1 -->
+    <div class="vehicle-card" data-category="suv premium">
+      <img src="/images/Innova Crysta2.jpeg" alt="Toyota Innova Crysta">
+      <div class="card-overlay">
+        <h3>Toyota Innova Crysta</h3>
+        <p class="specs">7+1 seater • Spacious Interior • AC • Family</p>
+        <div class="tags">
+          <span>SUV</span>
+          <span>7+1 Seater</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="vehicle-card" data-category="tempo group">
+      <img src="/images/Winger 8+1 Seater.jpeg"  alt="Tempo Traveller">
+      <div class="card-overlay">
+        <h3>Tempo Traveller</h3>
+        <p class="specs">12+1 seater • Group • 17+1 & 26+1</p>
+        <div class="tags">
+          <span>Tempo</span>
+          <span>Group</span>
+          <span>12+1 Seater</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="vehicle-card" data-category="suv premium">
+      <img src="/images/Innova Crysta.jpeg" alt="Toyota Fortuner">
+      <div class="card-overlay">
+        <h3>Toyota Fortuner</h3>
+        <p class="specs">Premium SUV • 7 Seater</p>
+        <div class="tags">
+          <span>SUV</span>
+          <span>Premium</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="vehicle-card" data-category="tempo group">
+      <img src="/images/Tempo 20 Seater.jpeg" alt="Force Traveller">
+      <div class="card-overlay">
+        <h3>Force Traveller</h3>
+        <p class="specs">Group Travel • 12/17/26 Seats</p>
+        <div class="tags">
+          <span>Tempo</span>
+          <span>Group</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="vehicle-card" data-category="bus group">
+      <img src="/images/SML.jpeg" alt="SML Mini Bus">
+      <div class="card-overlay">
+        <h3>SML Mini Bus</h3>
+        <p class="specs">Large Group • Events</p>
+        <div class="tags">
+          <span>Bus</span>
+          <span>Group</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="vehicle-card" data-category="sedan premium">
+      <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500" alt="Mercedes E-Class">
+      <div class="card-overlay">
+        <h3>Mercedes E-Class</h3>
+        <p class="specs">Premium Sedan • Comfort</p>
+        <div class="tags">
+          <span>Sedan</span>
+          <span>Premium</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA Button -->
+  <div class="fleet-bottom-btn">
+    <a href="/listings/booknow" class="btn-orange-pill">Book a Vehicle</a>
+  </div>
+</section>
+
+
+<!-- Lightbox Modal for Full Card -->
+<div id="cardLightbox" class="lightbox-modal">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  
+  <button class="lightbox-btn prev-btn" onclick="changeCard(-1)">&lang; Prev</button>
+  
+  <!-- Yahan poora Card Fit hoke dikhega -->
+  <div class="lightbox-card-container" id="lightboxCardContent"></div>
+
+  <button class="lightbox-btn next-btn" onclick="changeCard(1)">Next &rang;</button>
+</div>

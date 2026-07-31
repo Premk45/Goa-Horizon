@@ -1,0 +1,405 @@
+/* Grid Layout - Set exactly to 3 cards per row */
+
+/* Better Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap');
+
+.reviews-sectionr {
+    position: relative;
+    
+    /* Full width fix */
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    box-sizing: border-box;
+
+    /* Yahan apni image ka path daalein */
+    background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Blue Gradient Overlay - jaisa image me hai */
+.reviews-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark teal se blue gradient tak */
+    background: linear-gradient(to right, rgba(23, 79, 107, 0.85), rgba(52, 152, 219, 0.85));
+    z-index: 1;
+}
+
+.reviews-content {
+    position: relative;
+    z-index: 2; /* Overlay ke upar content laane ke liye */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+/* Header Styles */
+.reviews-header .subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-header .stars {
+    color: #f9a826; /* Orange color */
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-header h2 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Serif font for matching look */
+    font-size: 2.8rem;
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 700;
+}
+
+.reviews-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+/* Stats Layout */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+/* Translucent Stat Boxes */
+.stat-box {
+    background: rgba(255, 255, 255, 0.15); /* Transparent white */
+    backdrop-filter: blur(6px); /* Glassmorphism effect */
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    flex: 1;
+    min-width: 160px;
+    max-width: 200px;
+    /* Optional light border */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.stat-box h3 {
+    color: #f9a826; /* Orange stats */
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.stat-box p {
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .reviews-header h2 {
+        font-size: 2.2rem;
+    }
+    .stats-container {
+        gap: 1rem;
+    }
+    .stat-box {
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-box {
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+.reviews-grid {
+    display: grid;
+    /* Forces exactly 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px; /* Increased to fit 3 cards properly */
+    margin: 20px auto; /* Centers the grid and gives space from top/bottom */
+    padding-bottom: 40px; /* Gives safe space above your footer to prevent white patches */
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards on tablets */
+    }
+}
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr; /* 1 card on mobile */
+    }
+}
+
+/* Individual Review Card - Car-like Sleek Design */
+.review-card {
+    background-color: #ffffff;
+    /* Aerodynamic corners */
+    border-radius: 12px 12px 16px 16px;
+    padding: 24px;
+    /* REMOVED fixed height and width so it adjusts perfectly and doesn't overlap footer */
+    height: 90%; 
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.9), 
+                0 4px 12px rgba(0, 0, 0, 0.06);
+    /* "Racing stripe" accent on top */
+    border-top: 4px solid #3182ce; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    /* Fast, smooth acceleration transition */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 30px !important;
+}
+
+/* Mast Hover Effect */
+.review-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12), 
+                0 8px 15px rgba(0, 0, 0, 0.08);
+    border-top-color: #fbb03b; 
+}
+
+/* Shine Effect / Light Reflection (Car paint shine) */
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.5) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: all 0.7s ease-in-out;
+    pointer-events: none; 
+    z-index: 1;
+}
+
+/* Trigger the shine on hover */
+.review-card:hover::before {
+    left: 200%;
+}
+
+/* Star Ratings */
+.stars {
+    color: #fbb03b; 
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.empty-star {
+    color: #e2e8f0; 
+}
+
+/* Review Text */
+.review-text {
+    color: #4a5568;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    flex-grow: 1; 
+    position: relative;
+    z-index: 2;
+}
+
+/* User Info Section */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 14px;
+}
+
+.user-location {
+    color: #718096;
+    font-size: 12px;
+}
+
+/* Divider Line */
+.divider {
+    border: none;
+    border-top: 1px solid #edf2f7;
+    margin: 0 0 16px 0;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Category Tag / Pill */
+.tag {
+    display: inline-block;
+    background-color: #ebf4ff; 
+    color: #3182ce; 
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.review-card:hover .tag {
+    background-color: #bee3f8; 
+}
+
+
+
+
+
+/* CTA Section Container */
+.cta-sectionr {
+    background-color: #f7f9fc; /* Light grayish-blue background */
+    padding: 80px 20px 100px 20px;
+    text-align: center;
+    /* The dark slate border at the bottom of the image */
+    /* border-bottom: 24px solid #233946;  */
+}
+
+.cta-containerr {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Icon */
+.cta-iconr {
+    margin-bottom: 24px;
+}
+
+/* Typography */
+.cta-headingr {
+    font-family: 'Playfair Display', serif;
+    color: #184153 !important; /* Dark slate color */
+    font-size: 2.25rem; /* ~36px */
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.cta-subheadingr {
+    color: #5c728a !important; /* Soft slate/gray color */
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows buttons to stack on very small screens */
+}
+
+.btnr {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Primary Button (Orange) */
+.btn-primary {
+    background-color: #f99b28; /* The orange from the original review cards */
+    color: #ffffff;
+    border: none;
+    /* Soft glowing orange shadow */
+    box-shadow: 0 10px 20px rgba(249, 155, 40, 0.25); 
+}
+
+.btn-primary:hover {
+    background-color: #e88d1d;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(249, 155, 40, 0.35); 
+}
+
+/* Secondary Button (Outline) */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #184153; /* Matches heading color */
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .cta-heading {
+        font-size: 1.75rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .btnr {
+        width: 100%;
+    }
+}

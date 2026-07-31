@@ -1,0 +1,295 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; Yeh extra scroll ko rokega */
+    
+}
+
+/* =======================================
+   Custom Scrollbar Styling
+   ======================================= */
+
+/* Firefox ke liye fallback (kyunki Firefox webkit support nahi karta) */
+html {
+    scrollbar-width: thin; /* Patla scrollbar */
+    scrollbar-color: #1d64a3 #f1f5f9; /* Thumb color aur Track color */
+}
+
+/* 1. Scrollbar ki width set karna */
+::-webkit-scrollbar {
+    width: 10px;  /* Vertical scrollbar ki choudai (width) */
+    height: 10px; /* Horizontal scrollbar ki height */
+}
+
+/* 2. Scrollbar ka Track (Background area) */
+::-webkit-scrollbar-track {
+    background-color: #f1f5f9; /* Image jaisa light gray/white background */
+    border-left: 1px solid #e2e8f0; /* Optional: halki si line track ko alag dikhane ke liye */
+}
+
+/* 3. Scrollbar ka Thumb (Draggable blue part) */
+::-webkit-scrollbar-thumb {
+    background-color: #1d64a3; /* Image jaisa dark blue color */
+    border-radius: 20px; /* Fully rounded (Gol) corners */
+    
+    /* Ye border thumb aur track ke beech thoda space (padding) banayega */
+    border: 2px solid #f1f5f9; 
+}
+
+/* 4. Hover effect (Jab mouse scrollbar par aaye) */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #14497a; /* Mouse aane par color thoda aur dark ho jayega */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Navbar Main Style */
+.navbar {
+    background-color: #3B6377; /* Screenshot ka exact background color */
+    color: white;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 1. Logo Styling */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+
+img {
+    height: 60px;
+    width: 150px;
+    object-fit: contain;
+    box-shadow: 2px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    color: #FFB800; /* Yellow text for brand */
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.logo-subtitle {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* 2. Center Menu Links (Desktop) */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #FFB800;
+    opacity: 1;
+}
+
+/* Active Class jisse link yellow rahe */
+.nav-link.active {
+    color: #FFB800;
+    border-bottom: 2px solid #FFB800;
+}
+
+/* 3. Right Sidebar Actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-call {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-call:hover {
+    color: #FFB800;
+}
+
+.phone-icon {
+    transform: rotate(10deg);
+}
+
+/* Orange Capsule Button */
+.btn-book-now {
+    background-color: #FF9119; /* Exact Screenshot color */
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-book:hover {
+    background-color: #E07A0C;
+}
+
+.btn-book:active {
+    transform: scale(0.97);
+}
+
+/* 4. Hamburger Menu Button (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* 5. Mobile Menu (Hidden by Default) */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    background-color: #2D566A;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+.mobile-link.active {
+    color: #FFB800;
+}
+
+.mobile-btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* JS se toggle karne ke liye class */
+.mobile-menu.show {
+    display: flex;
+}
+
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Jab user scroll karega toh ye class JS ke through add ho jayegi */
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Halka sa shadow achhe look ke liye */
+}
+
+/* Text color handle karne ke liye (Optional) */
+.navbar.scrolled .logo .logo-subtitle,
+.navbar.scrolled a {
+  color: black; /* White background par text black karna padega */
+}
+
+
+/* Book Now Button Style */
+.btn-book-now {
+    display: inline-block; /* <a> tag ko proper button shape dene ke liye zaroori hai */
+    background-color: #f8971f; /* Image jaisa bright orange color */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Yahan se underline nikal di gayi hai */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Text ko bold karne ke liye */
+    font-size: 18px;
+    padding: 14px 40px; /* Button ko bada aur lamba shape dene ke liye */
+    border-radius: 50px; /* Kinaro ko fully gol (pill-shape) karne ke liye */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Halka sa 3D shadow */
+    transition: all 0.3s ease; /* Hover effect ko smooth banane ke liye */
+    text-align: center;
+    border: none;
+}
+
+/* Mast Hover Effect */
+.btn-book-now:hover {
+    background-color: #e08316; /* Hover karne par color thoda dark ho jayega */
+    transform: translateY(-3px); /* Button thoda sa upar uthega */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow thodi gehri aur badi ho jayegi */
+}
+
+/* Jab click karein (Active state) */
+.btn-book-now:active {
+    transform: translateY(1px); /* Click hone par button thoda dabega */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .navbar-links {
+        display: none; /* Hide Desktop menu */
+    }
+    
+    .menu-toggle {
+        display: block; /* Show Hamburger on tablet/mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-actions {
+        display: none; /* Mobile screen par navigation space badhane ke liye buttons hide kiye */
+    }
+}

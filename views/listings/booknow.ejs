@@ -1,0 +1,238 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="services-header-banner bookNow">
+    <div class="banner-content">
+        <span class="subtitle">Book Your Ride</span>
+        <h1 class="main-title">Taxi Booking in Goa</h1>
+        <p class="descriptiona">
+            Reliable, comfortable, and affordable taxi service across Goa. Book now and travel with ease.
+        </p>
+    </div>
+</div>
+
+
+
+<section class="booking-section">
+    <div class="booking-grid">
+        
+        <!-- Left Column: Booking Form -->
+        <div class="booking-form-card">
+            <div class="form-header">
+                <h2>Book Your Ride</h2>
+                <p>Fill in the details below. Send your booking via WhatsApp or Email and we'll confirm shortly.</p>
+            </div>
+            
+            <form>
+                <div class="form-rowb">
+                    <div class="form-groupb">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your name" id="name">
+                    </div>
+                    <div class="form-groupb">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+91 96321 90350" id="number"> 
+                    </div>
+                </div>
+                
+                <div class="form-groupb">
+                    <label>Email (optional, for booking confirmation)</label>
+                    <input type="email" placeholder="your@email.com" id="email">
+                </div>
+                
+                <div class="form-rowb">
+                    <div class="form-groupb">
+                        <label class="icon-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3182ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Pickup Location
+                        </label>
+                        <input type="text" placeholder="Enter pickup location" id="pickup">
+                    </div>
+                    <div class="form-groupb">
+                        <label class="icon-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f99b28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Drop Location
+                        </label>
+                        <input type="text" placeholder="Enter drop location" id="drop">
+                    </div>
+                </div>
+
+                <div class="form-rowb">
+                    <div class="form-groupb">
+                        <label class="icon-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Date
+                        </label>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="form-groupb">
+                        <label class="icon-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Time
+                        </label>
+                        <input type="time" id="time">
+                    </div>
+                </div>
+
+                <div class="form-rowbb">
+                    <div class="form-groupb">
+                        <label class="icon-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            Passengers
+                        </label>
+                        <select id="passanger">
+                            <option>2 Passengers</option>
+                            <option>3 Passengers</option>
+                            <option>4 Passengers</option>
+                            <option>5+ Passengers</option>
+                        </select>
+                    </div>
+                    <div class="form-groupb">
+                        <label>Vehicle Type</label>
+                        <select id="vehicle">
+                            <option>Sedan (4 Seater)</option>
+                            <option>Hatchback (4 Seater)</option>
+                            <option>SUV (6 Seater)</option>
+                            <option>Toyota Innova Crysta</option>
+                            <option>Tempo Traveller</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button type="button" class="btn-primary-whatsapp" onclick="BookNow(event)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        Book via WhatsApp
+                    </button>
+                    <button type="button" class="btn-secondary-email" onclick="BookNowOnEmail(event)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Send via Email
+                    </button>
+                </div>
+
+                <p class="call-us">Or call us at <a href="tel:+919632190350">+91 96321 90350</a></p>
+            </form>
+        </div>
+
+        <!-- Right Column: Our Vehicles -->
+        <div class="vehicles-card">
+            <h2>Our Vehicles</h2>
+            
+            <div class="vehicle-list">
+                <!-- Vehicle 1 -->
+                <div class="vehicle-item">
+                    <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7h2m14 0a2 2 0 1 1-4 0m-10 0a2 2 0 1 1-4 0"></path><circle cx="19" cy="16" r="2"></circle><circle cx="7" cy="16" r="2"></circle></svg>
+                    </div>
+                    <div class="vehicle-details" >
+                        <h4>Hatchback</h4>
+                        <span>4 Seater</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="vehicle-item">
+                    <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7h2m14 0a2 2 0 1 1-4 0m-10 0a2 2 0 1 1-4 0"></path><circle cx="19" cy="16" r="2"></circle><circle cx="7" cy="16" r="2"></circle></svg>
+                    </div>
+                    <div class="vehicle-details">
+                        <h4>Sedan</h4>
+                        <span>4 Seater</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="vehicle-item">
+                    <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7h2m14 0a2 2 0 1 1-4 0m-10 0a2 2 0 1 1-4 0"></path><circle cx="19" cy="16" r="2"></circle><circle cx="7" cy="16" r="2"></circle></svg>
+                    </div>
+                    <div class="vehicle-details">
+                        <h4>SUV</h4>
+                        <span>6 Seater</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4 -->
+                <div class="vehicle-item">
+                    <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7h2m14 0a2 2 0 1 1-4 0m-10 0a2 2 0 1 1-4 0"></path><circle cx="19" cy="16" r="2"></circle><circle cx="7" cy="16" r="2"></circle></svg>
+                    </div>
+                    <div class="vehicle-details">
+                        <h4>Toyota Innova Crysta</h4>
+                        <span>7+1 Seater</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle 5 -->
+                <div class="vehicle-item">
+                    <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5a2 2 0 0 0-2 2v7h2m14 0a2 2 0 1 1-4 0m-10 0a2 2 0 1 1-4 0"></path><circle cx="19" cy="16" r="2"></circle><circle cx="7" cy="16" r="2"></circle></svg>
+                    </div>
+                    <div class="vehicle-details">
+                        <h4>Tempo Traveller</h4>
+                        <span>24+1 Seater</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="vehicle-note">AC included in all vehicles. Contact us for fare details or to book a driver by the hour for flexible custom trips.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="features-section">
+    <div class="features-container">
+        
+        <h2 class="features-heading">Why Book Taxi with Goa Horizon Travels?</h2>
+        
+        <div class="features-grid">
+            
+            <!-- Feature 1: 24/7 Availability -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>24/7 Availability</h4>
+                    <p>Book anytime, day or night. Our drivers are always ready.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Verified Drivers -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>Verified Drivers</h4>
+                    <p>All drivers are background-checked and professionally trained.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Transparent Billing -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>Transparent Billing</h4>
+                    <p>No hidden charges. Clear communication on fare.</p>
+                </div>
+            </div>
+
+            <!-- Feature 4: Anywhere in Goa -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>Anywhere in Goa</h4>
+                    <p>From beaches to airports, we cover all of Goa.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

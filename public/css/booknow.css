@@ -1,0 +1,354 @@
+.bookNow{
+    /* Background Image + Blue Overlay */
+    background: linear-gradient(135deg, rgba(32, 147, 196, 0.88) 0%, rgba(30, 85, 105, 0.82) 100%), 
+                url('/images/Winger 8+1 Seater2.jpeg') center/cover no-repeat;
+}
+
+
+/* Layout Container */
+.booking-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Two-column Grid */
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr; /* Left side (form) slightly wider */
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Common Card Styles */
+.booking-form-card, 
+.vehicles-card {
+    width: 500px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* ============================
+   Left Column: Booking Form
+   ============================ */
+.form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #184153 !important ;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.form-header p {
+    color: #64748b !important;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Form Layout */
+.form-rowb {
+    display: grid !important; /* Grid forcefully apply karega */
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important; /* Ye dono boxes ke beech ka space banayega. Aap isko 24px ya 32px rakh sakte hain */
+    margin-bottom: 20px;
+}
+
+.form-groupb {
+    width: 100%;
+    margin-bottom: 0; /* Form-row ka gap already space dega */
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    color: #184153;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.icon-label svg {
+    margin-right: 6px;
+}
+
+/* Inputs and Selects */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #334155;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+/* Buttons Area */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.btn-primary-whatsapp, 
+.btn-secondary-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-whatsapp {
+    background-color: #25D366; /* WhatsApp Green */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.btn-primary-whatsapp:hover {
+    background-color: #20b858;
+    transform: translateY(-2px);
+}
+
+.btn-secondary-email {
+    background-color: #ffffff;
+    color: #0284c7; /* Blue text */
+    border: 1px solid #0284c7; /* Blue border */
+}
+
+.btn-secondary-email:hover {
+    background-color: #f0f9ff;
+    transform: translateY(-2px);
+}
+
+/* Bottom Call Text */
+.call-us {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.call-us a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ============================
+   Right Column: Our Vehicles
+   ============================ */
+.vehicles-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #184153 !important;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.vehicle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vehicle-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.car-icon {
+    background-color: #f99b28; /* Orange color */
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.vehicle-details h4 {
+    color: #1a202c;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.vehicle-details span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.vehicle-note {
+    margin-top: 32px;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+
+/* ============================
+   Responsive Design
+   ============================ */
+@media (max-width: 992px) {
+    .booking-grid {
+        grid-template-columns: 1fr; /* Stack columns on tablets/mobile */
+        gap: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row, .action-buttons {
+        grid-template-columns: 1fr; /* Stack inputs and buttons vertically */
+    }
+    
+    .booking-form-card, 
+    .vehicles-card {
+        padding: 24px; /* Reduce padding on small screens */
+    }
+}
+
+
+
+
+/* Section Container */
+.features-section {
+    padding: 80px 20px;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading Styling */
+.features-heading {
+    font-family: 'Playfair Display', serif;
+    color: #184153; /* Dark slate blue */
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+/* Grid Layout for Cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 24px;
+}
+
+/* Individual Feature Card */
+.feature-card {
+    background-color: #f8fafc; /* Very light gray/blue background */
+    border-radius: 12px;
+    padding: 24px;
+    display: flex; /* Flexbox to put icon and text side-by-side */
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Slight hover effect to make cards feel interactive */
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Orange Icon Box */
+.feature-icon {
+    background-color: #f99b28; /* The signature orange */
+    color: #ffffff; /* White SVG inside */
+    width: 48px;
+    height: 48px;
+    border-radius: 12px; /* Slightly rounded rectangle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevents icon from shrinking if text is long */
+}
+
+/* Text Container */
+.feature-text h4 {
+    font-family: 'Playfair Display', serif; /* Matching the main heading font */
+    color: #184153;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.feature-text p {
+    color: #64748b;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* ============================
+   Responsive Design
+   ============================ */
+/* For Tablets */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 600px) {
+    .features-heading {
+        font-size: 26px;
+        margin-bottom: 32px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}

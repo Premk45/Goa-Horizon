@@ -1,0 +1,64 @@
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Mobile par responsive lane ke liye */
+    gap: 30px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px; /* Mobile par box ko chhota hone se rokega */
+    padding: 10px;
+}
+
+/* Numbers ki styling (Image ke jaisa Serif font look dene ke liye) */
+.stat-number {
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem; /* Desktop par bada size */
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
+    color: #e0e0e0;
+}
+
+/* 10,000+ ke liye specific yellow color */
+.color-yellow {
+    color: #ffb703; /* Goa theme matching color */
+}
+
+/* Star icon styling */
+.star-icon {
+    color: #ffb703;
+    font-size: 2.8rem;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+
+/* Subtitle/Label ki styling */
+.stat-label {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVENESS (MEDIA QUERY) --- */
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2.5rem; /* Mobile screen par font size thoda chhota ho jayega */
+    }
+    
+    .star-icon {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}

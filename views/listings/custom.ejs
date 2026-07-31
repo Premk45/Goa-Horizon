@@ -1,0 +1,176 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="services-header-banner">
+    <div class="banner-content">
+        <span class="subtitle">Custom Tours & Attractions</span>
+        <h1 class="main-title">Create Your Own Goa Tour</h1>
+        <p class="descriptiona">
+        No fixed itinerary – book a private driver for a set number of hours and choose the attractions you want to see.
+        </p>
+    </div>
+</div>
+
+<section class="attractions-section">
+    <div class="attractions-header">
+        <h2 class="attractions-title">Popular Attractions You Can Add</h2>
+        <p class="attractions-subtitle">Mix and match attractions like Old Goa, temples, beaches and markets. Your driver will follow the route you choose on the day.</p>
+    </div>
+
+    <div class="attractions-grid">
+        <!-- Card 1: Old Goa -->
+        <div class="attraction-card">
+            <!-- Apni image ka link src="" me daalein -->
+            <img class="attraction-image" src="/images/church_gate.jpeg">
+            <div class="attraction-content">
+                <h3>Old Goa Church & Heritage</h3>
+                <p>Walk through centuries of history at Old Goa Church & Museum with stunning Portuguese architecture and riverside views.</p>
+            </div>
+        </div>
+
+        <!-- Card 2: Mangueshi Temple -->
+        <div class="attraction-card">
+            <!-- Apni image ka link src="" me daalein -->
+            <img class="attraction-image" src="/images/temple.jpg">
+            <div class="attraction-content">
+                <h3>Mangueshi Temple & Surroundings</h3>
+                <p>Visit the famous Mangueshi Temple surrounded by coconut groves and quiet village roads - a peaceful spiritual stop.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="itinerary-section">
+    <div class="itinerary-container">
+        <!-- Heading and Subtitle -->
+        <h2 class="itinerary-title">No Fixed Itinerary – You Decide</h2>
+        <p class="itinerary-subtitle">Book your driver for 4, 8 or 10 hours. Tell us which attractions you want to cover – or decide on the day – and your driver will plan the best route.</p>
+        
+        <!-- List Items -->
+        <div class="itinerary-list">
+            
+            <!-- Item 1: Flexible Time Slots -->
+            <div class="itinerary-item">
+                <div class="itinerary-icon">
+                    <!-- Clock SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <p class="itinerary-text">
+                    <strong>Flexible time slots:</strong> Choose how long you want the driver (for example 4 hours, 8 hours or a full day).
+                </p>
+            </div>
+
+            <!-- Item 2: Choose your own route -->
+            <div class="itinerary-item">
+                <div class="itinerary-icon">
+                    <!-- Map Pin SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <p class="itinerary-text">
+                    <strong>Choose your own route:</strong> Old Goa, Mangueshi Temple, markets, beaches – you can add or skip places as you like.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="custom-tour-section">
+    <!-- Header Section -->
+    <div class="custom-tour-header">
+        <h2>Book a Driver for Your Custom Tour</h2>
+        <p>In the booking message, mention how many hours you need the driver and which attractions you have in mind. We'll share a quote and suggestions.</p>
+    </div>
+
+    <!-- Centered Form Card -->
+    <div class="custom-form-wrapper">
+        <div class="card">
+            <div class="header-center">
+                <h2>Book Custom Goa Tour</h2>
+                <p class="subtitle">Fill in the details below. Send your booking via WhatsApp or Email and we'll confirm shortly.</p>
+            </div>
+            
+            <form>
+                <!-- Name and Phone -->
+                <div class="form-rowa">
+                    <div class="form-groupa">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your name" id="name">
+                    </div>
+                    <div class="form-groupa">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+91 96321 90350" id="number">
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-groupa">
+                    <label>Email (optional, for booking confirmation)</label>
+                    <input type="email" placeholder="your@email.com" id="email">
+                </div>
+                
+                <!-- Pickup and Date -->
+                <div class="form-rowa">
+                    <div class="form-groupa">
+                        <label>Pickup Location</label>
+                        <input type="text" placeholder="Enter pickup location" id="pickup">
+                    </div>
+                    <div class="form-groupa">
+                        <label>Date</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                
+                <!-- Time and Passengers -->
+                <div class="form-rowa">
+                    <div class="form-groupa">
+                        <label>Time</label>
+                        <input type="time" id="time">
+                    </div>
+                    <div class="form-groupa">
+                        <label>Passengers</label>
+                        <select id="passanger">
+                            <option>2 Passengers</option>
+                            <option>3 Passengers</option>
+                            <option>4 Passengers</option>
+                            <option>5+ Passengers</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Vehicle Type (Half Width) -->
+                <div class="form-rowa">
+                    <div class="form-groupa" style="flex: 0 0 calc(50% - 0.5rem);">
+                        <label>Vehicle Type</label>
+                        <select id="vehicle">
+                            <option>Sedan (4 Seater)</option>
+                            <option>SUV (6 Seater)</option>
+                            <option>Premium SUV</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Buttons (Reusing your previous button classes) -->
+                <div class="button-groupa">
+                    <button type="button" class="btn-whatsappa btna" onclick=" northBookNow(event)">
+                        Book via WhatsApp
+                    </button>
+                    <button type="button" class="btn-emaila btna" onclick="northBookNowOnEmail(event)">
+                        Send via Email
+                    </button>
+                </div>
+                
+                <!-- Footer Call Text -->
+                <p class="call-text">Or call us at <a href="tel:+919632190350">+91 96321 90350</a></p>
+            </form>
+        </div>
+    </div>
+</section>

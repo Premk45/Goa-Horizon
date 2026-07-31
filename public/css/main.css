@@ -1,0 +1,1079 @@
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+
+.tour-packages-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.packages-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-subtitle {
+    color: #3182ce;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.header-title {
+    font-family: 'Playfair Display', serif;
+    color: #1a202c;
+    font-size: 2.5rem;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+}
+
+.header-desc {
+    color: #4a5568;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Grid Layout */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Individual Card Styles */
+.package-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Hover Effect for normal cards */
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+/* Featured Card (Middle one) */
+.package-card.featured {
+    border: 2px solid #3eb0ef; /* Blue border */
+    box-shadow: 0 10px 30px rgba(62, 176, 239, 0.15);
+    transform: scale(1.02);
+}
+.package-card.featured:hover {
+    transform: scale(1.02) translateY(-5px);
+}
+
+/* Card Content */
+.card-tag {
+    color: #3182ce;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    color: #1a202c;
+    font-size: 1.4rem;
+    margin: 0 0 12px 0;
+}
+
+.card-desc {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    min-height: 42px; /* aligns text heights */
+}
+
+/* Features List */
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    flex-grow: 1;
+}
+
+.card-features li {
+    color: #4a5568;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* CSS Drawn Smiley Icon matching the image */
+.icon-smile {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid #3eb0ef;
+    position: relative;
+    flex-shrink: 0;
+}
+.icon-smile::before, .icon-smile::after {
+    content: '';
+    position: absolute;
+    background: #3eb0ef;
+}
+/* Eyes */
+.icon-smile::before {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    box-shadow: 5px 0 0 #3eb0ef;
+}
+/* Smile */
+.icon-smile::after {
+    width: 8px;
+    height: 4px;
+    border-bottom: 1.5px solid #3eb0ef;
+    border-radius: 0 0 10px 10px;
+    top: 7px;
+    left: 3px;
+    background: transparent;
+}
+
+/* Price Section */
+.card-price {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.strike-text {
+    text-decoration: line-through;
+}
+.line-dash {
+    letter-spacing: -2px;
+}
+.quote-text {
+    color: #718096;
+}
+
+/* Buttons */
+.plan-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 24px;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.plan-btn:hover {
+    background: #f8fafc;
+    border-color: #a0aec0;
+}
+
+/* Featured Button (Orange) */
+.featured-btn {
+    background: #f6ad55;
+    border-color: #f6ad55;
+    color: #ffffff;
+}
+
+.featured-btn:hover {
+    background: #ed8936;
+    border-color: #ed8936;
+    box-shadow: 0 4px 12px rgba(246, 173, 85, 0.4);
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.why-choose-us-section {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+
+/* --- Dark Top Section --- */
+.dark-features-area {
+    background-color: #0b1320; /* Deep Navy Blue */
+    padding: 80px 20px;
+    color: #ffffff;
+}
+
+.features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.features-subtitle {
+    color: #38bdf8; /* Light Blue */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.features-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+}
+
+.features-desc {
+    color: #94a3b8; /* Slate text */
+    font-size: 0.95rem;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Grid */
+.features-grid-dark {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Dark Card */
+.dark-card {
+    background: rgba(255, 255, 255, 0.03); /* Very transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.dark-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    color: #fbbf24; /* Yellow Icon */
+    margin-bottom: 16px;
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dark-card h4 {
+    font-size: 1.05rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.dark-card p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Gradient Promo Banner --- */
+.promo-banner-area {
+    /* Image jaisa Orange to Pinkish-Red gradient */
+    background: linear-gradient(to right, #f59e0b, #f43f5e);
+    padding: 30px 20px;
+    color: white;
+}
+
+.promo-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Promo Text */
+.promo-text {
+    flex: 1;
+}
+
+.promo-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0.9;
+}
+
+.promo-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0 0 8px 0;
+}
+
+.promo-text p {
+    font-size: 0.85rem;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+    max-width: 450px;
+}
+
+/* Promo Timer */
+.promo-timer {
+    flex-shrink: 0;
+}
+
+.timer-box {
+    background: rgba(0, 0, 0, 0.25); /* Translucent dark pill */
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    font-family: monospace; /* Gives that digital clock feel */
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.colon {
+    margin: 0 6px;
+    opacity: 0.8;
+}
+
+.timer-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 12px;
+    opacity: 0.9;
+    letter-spacing: 0;
+}
+
+/* Action Button */
+.promo-action {
+    flex-shrink: 0;
+}
+
+.grab-btn {
+    background: #ffffff;
+    color: #f43f5e;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.grab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Clean white background */
+    font-family: 'Inter', sans-serif;
+}
+
+.testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-subtitle {
+    color: #38bdf8; /* Light blue */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.header-title {
+    font-family: 'Playfair Display', serif;
+    color: #1e293b; /* Dark slate */
+    font-size: 2.5rem;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.header-desc {
+    color: #475569;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Grid Layout */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards in one row */
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Individual Card */
+.testimonial-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 30px 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    transform: translateY(-2px);
+}
+
+/* Stars */
+.stars {
+    color: #f59e0b; /* Yellow/Orange star color */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+/* Review Text */
+.review-text {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    flex-grow: 1; /* Keeps footer at bottom if text length varies */
+}
+
+/* Reviewer Info */
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reviewer-info strong {
+    color: #0f172a;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.reviewer-info span {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+/* Action Button Centering */
+.testimonials-action {
+    text-align: center;
+}
+
+/* Read All Button */
+.read-all-btn {
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 10px 24px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.read-all-btn:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .features-grid-dark {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .promo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .promo-text p {
+        margin: 0 auto;
+    }
+    .timer-box {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid-dark {
+        grid-template-columns: 1fr;
+    }
+    .features-title {
+        font-size: 2rem;
+    }
+    .promo-text h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .package-card.featured {
+        transform: scale(1);
+    }
+    .package-card.featured:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* 1. Base styles (Desktop/Default) */
+.navbar {
+  padding: 20px;
+}
+
+/* 2. Tablets (Screens smaller than 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px;
+  }
+}
+
+/* 3. Mobile Phones (Screens smaller than 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px;
+  }
+  .navbar-links {
+    display: none; /* Hide standard links, show mobile hamburger menu */
+  }
+}
+
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.faq-section {
+    padding: 80px 20px;
+    background-color: #f8fafc; /* Very light slate background */
+    font-family: 'Inter', sans-serif;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-subtitle {
+    color: #38bdf8; /* Blue color */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.faq-title {
+    font-family: 'Playfair Display', serif;
+    color: #1e293b;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* FAQ Box (White Container) */
+.faq-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    /* Soft shadow to match the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Last item shouldn't have a bottom border */
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+/* Question Button */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 24px 30px;
+    /* Question font is serif in the image */
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.15rem;
+    color: #334155;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #0f172a;
+}
+
+/* Chevron/Arrow Icon */
+.icon-chevron {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke-width: 2;
+    color: #94a3b8;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+/* Rotate arrow when open */
+.faq-item.active .icon-chevron {
+    transform: rotate(180deg);
+}
+
+/* Answer Area */
+.faq-answer {
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 30px;
+    background-color: #ffffff;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Show Answer when item is active */
+.faq-item.active .faq-answer {
+    max-height: 500px; /* Arbitrary high value to allow slide down */
+    padding-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .faq-title {
+        font-size: 2rem;
+    }
+    .faq-question {
+        padding: 20px;
+        font-size: 1.05rem;
+    }
+    .faq-answer {
+        padding: 0 20px;
+    }
+    .faq-item.active .faq-answer {
+        padding-bottom: 20px;
+    }
+}
+
+
+
+/* Fonts Import */
+
+.ride-section {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Clean white background */
+    font-family: 'Inter', sans-serif;
+}
+
+.ride-container {
+    max-width: 1000px; /* Adjust based on your preference */
+    margin: 0 auto;
+}
+
+/* Header Flexbox */
+.ride-header {
+    display: flex;
+    justify-content: space-between; /* Puts title on left, button on right */
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.ride-title {
+    font-family: 'Playfair Display', serif;
+    color: #1e293b; /* Dark slate */
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Orange Pill Button */
+.view-all-btn {
+    background-color: #f99b28; /* Orange color from the image */
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-all-btn:hover {
+    background-color: #e88d1d;
+    transform: translateY(-2px);
+}
+
+/* Image Grid */
+.ride-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 16px; /* Space between images */
+}
+
+/* Grid Item (Image Container) */
+.ride-item {
+    border-radius: 12px;
+    overflow: hidden; /* Keeps image inside the rounded corners */
+    aspect-ratio: 4 / 3; /* Maintains uniform shape for all boxes */
+    background-color: #f1f5f9; /* Placeholder background color */
+}
+
+/* Actual Image Styling */
+.ride-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the box without distorting */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Optional hover zoom effect for premium feel */
+.ride-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+    .ride-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+    
+    .ride-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .ride-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+
+
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.moments-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Clean white background */
+    font-family: 'Inter', sans-serif;
+}
+
+.moments-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.moments-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.moments-subtitle {
+    color: #38bdf8; /* Light blue accent */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.moments-title {
+    font-family: 'Playfair Display', serif;
+    color: #1e293b;
+    font-size: 2.5rem;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.moments-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Video Grid - 4 Columns */
+.moments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual Video Card */
+.video-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Soft shadow to match the reference */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Video Wrapper for Vertical Aspect Ratio (9:16) */
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 9 / 16; /* Perfect for Reels/Shorts format */
+    background-color: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-wrapper video, 
+.video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the frame without stretching */
+    display: block;
+}
+
+/* Caption Area */
+.video-caption {
+    padding: 16px 12px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    background-color: #ffffff;
+    font-weight: 500;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 900px) {
+    .moments-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .moments-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .moments-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+.cta-banner-section {
+    /* Dark Teal Background matching the image */
+    background-color: #213f41; 
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.cta-banner-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography */
+.cta-banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+}
+
+.cta-banner-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 auto 32px auto;
+    color: #f1f5f9; /* Off-white for better readability */
+    max-width: 600px;
+}
+
+/* Button Container */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap; /* Helps buttons stack on very small screens */
+}
+
+/* Base Button Styles */
+.btn-whatsapp, .btn-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+    background-color: #25d366; /* Vibrant WhatsApp Green */
+    color: #ffffff;
+    border: 2px solid #25d366;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Call Now Button */
+.btn-call {
+    background-color: #ffffff;
+    /* Text color perfectly matches the background color */
+    color: #213f41; 
+    border: 2px solid #ffffff;
+}
+
+.btn-call:hover {
+    background-color: #f8fafc;
+    transform: translateY(-2px);
+}
+
+/* Phone SVG Icon inside Call Button */
+.icon-phone {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    stroke: currentColor;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .cta-banner-title {
+        font-size: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch; /* Makes buttons full width on mobile */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

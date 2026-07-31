@@ -1,0 +1,239 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+
+<div class="services-header-banner">
+    <div class="banner-content">
+        <span class="subtitle">Airport Transfers</span>
+        <h1 class="main-title">Goa Airport Pickup & Drop</h1>
+        <p class="descriptiona">
+        Stress-free airport transfers with flight tracking and meet & greet service.
+        </p>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <!-- Left Column: Booking Form -->
+    <div class="card">
+        <div class="header-center">
+            <h2>Book Your Ride</h2>
+            <p class="subtitle">Fill in the details below. Send your booking via WhatsApp or Email and we'll confirm shortly.</p>
+        </div>
+        
+        <form>
+            <div class="form-rowa">
+                <div class="form-groupa">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your name" id="name">
+                </div>
+                <div class="form-groupa">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+91 96321 90350" id="number">
+                </div>
+            </div>
+            
+            <div class="form-groupa">
+                <label>Email (optional, for booking confirmation)</label>
+                <input type="email" placeholder="your@email.com" id="email">
+            </div>
+            
+            <div class="form-rowa">
+                <div class="form-groupa">
+                    <label>Pickup Location</label>
+                    <input type="text" placeholder="Goa Airport" id="pickup">
+                </div>
+                <div class="form-groupa">
+                    <label>Drop Location</label>
+                    <input type="text" placeholder="Enter drop location" id="drop">
+                </div>
+            </div>
+            
+            <div class="form-rowa">
+                <div class="form-groupa">
+                    <label>Date</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-groupa">
+                    <label>Time</label>
+                    <input type="time" id="time">
+                </div>
+            </div>
+            
+            <div class="form-rowa">
+                <div class="form-groupa">
+                    <label>Passengers</label>
+                    <select id="passanger">
+                        <option>2 Passengers</option>
+                        <option>3 Passengers</option>
+                        <option>4 Passengers</option>
+                        <option>5+ Passengers</option>
+                    </select>
+                </div>
+                <div class="form-groupa">
+                    <label>Vehicle Type</label>
+                    <select id="vehicle">
+                        <option>Sedan (4 Seater)</option>
+                        <option>SUV (6 Seater)</option>
+                        <option>Premium SUV</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="button-groupa">
+                <button type="button" class="btn-whatsappa btna" onclick="BookNow(event)">Book via WhatsApp</button>
+                <button type="button" class="btn-emaila btna" onclick="BookNowOnEmail(event)">Send via Email</button>
+            </div>
+            
+            <p class="call-text">Or call us at <a href="tel:+919632190350">+91 96321 90350</a></p>
+        </form>
+    </div>
+
+    <!-- Right Column: Info & Pricing -->
+    <div class="card">
+        <h2>Airport & Station Pickup/Drop</h2>
+        <p class="subtitle">We serve all major airports and stations across Goa. Contact us for vehicles and fare.</p>
+        
+        <div class="location-group">
+            <h3>Dabolim Airport Pickup & Drop</h3>
+            <div class="tags">
+                <span class="tag">Innova Crysta</span>
+                <span class="tag">Ertiga</span>
+                <span class="tag">Swift Dzire</span>
+                <span class="tag">Baleno</span>
+                <span class="tag">Innova Hycross</span>
+            </div>
+        </div>
+        
+        <div class="location-group">
+            <h3>Mopa Airport Pickup & Drop</h3>
+            <div class="tags">
+                <span class="tag">Innova Crysta</span>
+                <span class="tag">Ertiga</span>
+                <span class="tag">Swift Dzire</span>
+                <span class="tag">Baleno</span>
+                <span class="tag">Innova Hycross</span>
+            </div>
+        </div>
+
+        <div class="location-group">
+            <h3>Vasco Railway Station Pickup & Drop</h3>
+            <div class="tags">
+                <span class="tag">Ertiga</span>
+                <span class="tag">Innova Crysta</span>
+                <span class="tag">Swift Dzire</span>
+                <span class="tag">Baleno</span>
+                <span class="tag">Innova Hycross</span>
+            </div>
+        </div>
+
+        <div class="location-group">
+            <h3>Panjim Bus Stand Pickup & Drop</h3>
+            <div class="tags">
+                <span class="tag">Ertiga</span>
+                <span class="tag">Innova Crysta</span>
+                <span class="tag">Swift Dzire</span>
+                <span class="tag">Baleno</span>
+            </div>
+        </div>
+
+        <div class="location-group">
+            <h3>Mapusa Bus Stand Pickup & Drop</h3>
+            <div class="tags">
+                <span class="tag">Ertiga</span>
+                <span class="tag">Innova Crysta</span>
+                <span class="tag">Swift Dzire</span>
+                <span class="tag">Baleno</span>
+            </div>
+        </div>
+
+        <div class="included-box">
+            <h4>Included in all transfers:</h4>
+            <ul>
+                <li>Flight tracking & monitoring</li>
+                <li>Meet & greet at arrivals</li>
+                <li>45 minutes free waiting time</li>
+                <li>Luggage assistance</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<section class="features-section">
+    <h2 class="section-title">Why Choose Our Airport Service?</h2>
+    
+    <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Airplane SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6l-1 1.5c-.3.5-.1 1.2.4 1.5l6.5 3-3.5 3.5-3.3-.8c-.4-.1-.8.2-1 .6L1 18l4.6 2.4L8 23l1.8-1c.4-.2.7-.6.6-1l-.8-3.3 3.5-3.5 3 6.5c.3.5 1 .7 1.5.4l1.5-1c.4-.2.7-.6.6-1.1z"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Flight Tracking</h3>
+                <p>We monitor your flight and adjust pickup time accordingly.</p>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Clock SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Meet & Greet</h3>
+                <p>Driver waits at arrivals with your name board.</p>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Luggage SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Luggage Assistance</h3>
+                <p>Help with loading and unloading your bags.</p>
+            </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Group SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Group Transfers</h3>
+                <p>Tempo Travellers available for large groups.</p>
+            </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Shield SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Transparent Billing</h3>
+                <p>No surge pricing. Clear fare communication.</p>
+            </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+            <div class="feature-icon">
+                <!-- Location Pin SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="feature-content">
+                <h3>Door to Door</h3>
+                <p>Drop-off directly at your hotel or resort.</p>
+            </div>
+        </div>
+    </div>
+</section>

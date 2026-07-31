@@ -1,0 +1,91 @@
+{
+	"_id": {
+		"$oid": "6a60b020501a1b518c4dcc41"
+	},
+	"Image": {
+		"url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500",
+		"filename": "default_image"
+	},
+	"Title": "Goa",
+	"Description": "gsgfdsg",
+	"Package_Type": "sdgdsfgsdgsf",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60b17db8da1376d151fc3e"
+	},
+	"Image": {
+		"url": "/uploads/390d1c6248bac771c17e3299ea1a84b0",
+		"filename": "390d1c6248bac771c17e3299ea1a84b0"
+	},
+	"Title": "Goa tour",
+	"Description": "fsdfsdgsd",
+	"Package_Type": "sfgsdgdfgsdg",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60b8cbb8da1376d151fc3f"
+	},
+	"Image": {
+		"url": "/uploads/328c23eea0c9382ebe9ee57f347a38b2",
+		"filename": "328c23eea0c9382ebe9ee57f347a38b2"
+	},
+	"Title": "North Goa Tour",
+	"Description": "Experience the vibrant beaches, historic forts, and exciting nightlife of North Goa. A complete sightseeing package covering all major attractions.",
+	"Package_Type": "Day rates on request",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60b9e0b8da1376d151fc40"
+	},
+	"Image": {
+		"url": "/uploads/c17341be79baa60c76e9b8d73e41910e",
+		"filename": "c17341be79baa60c76e9b8d73e41910e"
+	},
+	"Title": "South Goa Tour",
+	"Description": "Discover the serene beauty of South Goa. From UNESCO heritage churches to pristine beaches, experience the quieter, more authentic side of Goa.\r\n\r\n",
+	"Package_Type": "Full-day packages",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60bafbb8da1376d151fc41"
+	},
+	"Image": {
+		"url": "/uploads/8ae49c2b74d372f72b05baa32e9c2226",
+		"filename": "8ae49c2b74d372f72b05baa32e9c2226"
+	},
+	"Title": "Goa Airport Pickup & Drop",
+	"Description": "Stress-free airport transfers with flight tracking and meet & greet service.",
+	"Package_Type": "From competitive fares",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60bb93b8da1376d151fc42"
+	},
+	"Image": {
+		"url": "/uploads/2b7175f2e35002c7d8c1c1974975ac81",
+		"filename": "2b7175f2e35002c7d8c1c1974975ac81"
+	},
+	"Title": "Create Your Own Goa Tour",
+	"Description": "No fixed itinerary – book a private driver for a set number of hours and choose the attractions you want to see.",
+	"Package_Type": "Hourly & full day\r\n\r\n",
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6a60bc8ab8da1376d151fc43"
+	},
+	"Image": {
+		"url": "/uploads/c8fe1ff7226e77308d5bdfd63c3d9f24",
+		"filename": "c8fe1ff7226e77308d5bdfd63c3d9f24"
+	},
+	"Title": "Tempo & Group Travel",
+	"Description": "24+1 Tempo Traveller and multi-vehicle plans for families, weddings, and corporate outings.",
+	"Package_Type": "Custom quotes",
+	"__v": 0
+}
