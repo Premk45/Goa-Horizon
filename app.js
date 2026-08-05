@@ -18,30 +18,25 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(methodOverride('_method'));
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/Horizon";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/Horizon";
 
-main()
-    .then(() => {
-        console.log("Connected To Horizon");
-})
-    .catch((err) => {
-        console.log(err);
-});
+// main()
+//     .then(() => {
+//         console.log("Connected To Horizon");
+// })
+//     .catch((err) => {
+//         console.log(err);
+// });
 
-async function main() {
-    await mongoose.connect(MONGO_URL);
-};
+// async function main() {
+//     await mongoose.connect(MONGO_URL);
+// };
 
-// Index Route
-app.get("/" , async (req , res) => {
-    const allListings = await Listing.find({});
-    res.render("./listings/index.ejs" , {allListings});  
-});
+
 
 // Index Route
 app.get("/listings" , async (req , res) => {
-    const allListings = await Listing.find({});
-    res.render("./listings/index.ejs" , {allListings});  
+    res.render("./listings/index.ejs");  
 });
 
 // New Listing Form Render Route
@@ -50,25 +45,25 @@ app.get("/listings/new", (req, res) => {
 });
 
 // New Listing Adding 
-app.post('/listings', upload.single('listing[Image]'), async (req, res) => {
+// app.post('/listings', upload.single('listing[Image]'), async (req, res) => {
 
-    const newListing = new Listing(req.body.listing);
-    if (req.file) {
-        newListing.Image = {
-            url: `/uploads/${req.file.filename}`, // ya req.file.filename agar local storage hai
-            filename: req.file.filename
-        };
-    }
-    else{
-            console.log("Image Not Found!");
-    }
+//     const newListing = new Listing(req.body.listing);
+//     if (req.file) {
+//         newListing.Image = {
+//             url: `/uploads/${req.file.filename}`, // ya req.file.filename agar local storage hai
+//             filename: req.file.filename
+//         };
+//     }
+//     else{
+//             console.log("Image Not Found!");
+//     }
 
-    // console.log(req.file.path);
+//     // console.log(req.file.path);
 
-    await newListing.save();
-    res.redirect("/listings");
-    // res.send("Successufull");
-}); 
+//     await newListing.save();
+//     res.redirect("/listings");
+//     // res.send("Successufull");
+// }); 
 
 // About Horizon Route
 app.get("/listings/about" , async (req , res) => {
@@ -127,35 +122,35 @@ app.get("/listings/north-goa" , async (req , res) => {
 
 
 
-app.get("/listings/:id" , async (req , res) => {
-    let {id} = req.params;
-    console.log(id);
-    const listing = await Listing.findById(id);
-    res.render("./listings/show.ejs" , {listing});  
-});
+// app.get("/listings/:id" , async (req , res) => {
+//     let {id} = req.params;
+//     console.log(id);
+//     const listing = await Listing.findById(id);
+//     res.render("./listings/show.ejs" , {listing});  
+// });
 
-app.get("/listings/:id/edit" , async (req , res) => {
-    let {id} = req.params;
-    console.log(id);
-    const listing = await Listing.findById(id);
-    res.render("./listings/edit.ejs" , {listing});  
-});
+// app.get("/listings/:id/edit" , async (req , res) => {
+//     let {id} = req.params;
+//     console.log(id);
+//     const listing = await Listing.findById(id);
+//     res.render("./listings/edit.ejs" , {listing});  
+// });
 
-app.put('/listings/:id', upload.single('listing[Image]'), async (req, res) => {
+// app.put('/listings/:id', upload.single('listing[Image]'), async (req, res) => {
 
-    let {id} = req.params;
-    await Listing.findByIdAndUpdate(id , {...req.body.listing});
-    res.redirect(`/listings/${id}`);
-}); 
+//     let {id} = req.params;
+//     await Listing.findByIdAndUpdate(id , {...req.body.listing});
+//     res.redirect(`/listings/${id}`);
+// }); 
 
 
-app.delete('/listings/:id', async (req, res) => {
+// app.delete('/listings/:id', async (req, res) => {
 
-    let {id} = req.params;
-    let deletedListing = await Listing.findByIdAndDelete(id);
-    console.log(deletedListing);
-    res.redirect("/listings");
-}); 
+//     let {id} = req.params;
+//     let deletedListing = await Listing.findByIdAndDelete(id);
+//     console.log(deletedListing);
+//     res.redirect("/listings");
+// }); 
 
 
 

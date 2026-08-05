@@ -1,3 +1,5 @@
+
+
 /* Layout */
 .container {
     display: flex;
@@ -10,6 +12,8 @@
     /* Agar screen badi hai toh cards ko center align rakhega */
     justify-content: center; 
     align-items: flex-start;
+
+    
 }
 
 .card {

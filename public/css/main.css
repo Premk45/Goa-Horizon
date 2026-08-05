@@ -1077,3 +1077,218 @@
         margin: 0 auto;
     }
 }
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.gt-section {
+  padding: 60px 20px;
+}
+
+.gt-container {
+  max-width: 1050px; 
+  margin: 0 auto;
+}
+
+/* --- Headers & Typography --- */
+.gt-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.gt-subtitle {
+  color: #0ea5e9; 
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.gt-title {
+  font-family: "Georgia", serif; 
+  color: #113440; 
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.gt-desc {
+  color: #64748b;
+  font-size: 14px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* --- Grid Layout --- */
+.gt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px; 
+}
+
+/* --- Card Styles --- */
+.gt-card {
+  background-color: #ffffff;
+  border-radius: 16px; 
+  overflow: hidden; 
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06); 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Image */
+.gt-img-box {
+  position: relative;
+  width: 100%;
+  height: 210px; 
+}
+
+.gt-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badges */
+.gt-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gt-badge-pop { background-color: #f59e0b; }
+.gt-badge-val { background-color: #10b981; }
+.gt-badge-24 { background-color: #0ea5e9; }
+
+/* Card Content Body */
+.gt-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gt-card-title {
+  font-family: "Georgia", serif;
+  color: #113440;
+  font-size: 19px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.gt-card-text {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  flex-grow: 1; 
+}
+
+.gt-card-price {
+  color: #0ea5e9;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* --- Buttons --- */
+.gt-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.gt-btn {
+  flex: 1;
+  text-decoration: none;
+  padding: 12px 0;
+  border: none;
+  border-radius: 30px; 
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.gt-btn:hover {
+  opacity: 0.9;
+}
+
+.gt-btn-orange {
+  background-color: #f89a20; 
+  box-shadow: 0 6px 12px rgba(248, 154, 32, 0.25); 
+}
+
+.gt-btn-green {
+  background-color: #22c55e; 
+  box-shadow: 0 6px 12px rgba(34, 197, 94, 0.25);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+  .gt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 1. GROUPS (Purple / पर्पल बैज) */
+.gt-badge-purp { 
+  background-color: #8b5cf6; 
+}
+
+/* 2. FLEXIBLE (Red / लाल बैज) */
+.gt-badge-red { 
+  background-color: #ff4d4f; 
+}
+
+/* 3. GOA MOMENTS (Teal / टील बैज) */
+.gt-badge-teal { 
+  background-color: #0096a6; 
+}
+
+/* 1. सबसे पहले, अपनी पुरानी .gt-card क्लास में transition ऐड करें ताकि इफ़ेक्ट स्मूथ लगे */
+.gt-card {
+  /* ... आपका पहले का कोड ... */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 2. कार्ड पर Hover करने का इफ़ेक्ट (कार्ड ऊपर उठेगा और शैडो बढ़ेगा) */
+.gt-card:hover {
+  transform: translateY(-10px); /* कार्ड को 10px ऊपर ले जाएगा */
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12); /* शैडो को और बड़ा और गहरा करेगा */
+}
+
+/* 3. इमेज के लिए स्मूथ ट्रांजीशन ऐड करें */
+.gt-img-box img {
+  /* ... आपका पहले का कोड ... */
+  transition: transform 0.4s ease; /* ज़ूम होने की स्पीड */
+}
+
+/* 4. कार्ड पर Hover करने पर फोटो को हल्का सा ज़ूम (Scale) करें */
+.gt-card:hover .gt-img-box img {
+  transform: scale(1.08); /* फोटो को 8% ज़ूम करेगा */
+}

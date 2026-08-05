@@ -152,52 +152,135 @@
 </section>
 
 
-<div class="parent-container">
-    <% for(let listing of allListings){ %>   
-    <div class="t-card">
-        <div class="card-image-area images">
-            <span class="badge-popular">Popular</span>
-            <img class="images" src="<%= listing.Image.url %>" alt="listing image">
-        </div>
-        
-        <div class="card-body">
-            <h3 class="card-title"><%= listing.Title %></h3>
-            <p class="card-description">
-                <%= listing.Description %>
-            </p>
-            <div class="card-rate-info"> 
-                <%= listing.Package_Type %> 
-            </div>
-            
-            <div class="card-actions">
-                <% if (listing.Title === 'Goa Airport Pickup & Drop') { %>
-                    <a href="/listings/airport" class="btn btn-view">View details</a>
-        
-                <% } else if (listing.Title === 'Create Your Own Goa Tour') { %>
-                    <a href="/listings/custom" class="btn btn-view">View details</a>
-                    
-                <% } else if (listing.Title === 'Tempo & Group Travel') { %>
-                    <a href="/listings/fleet" class="btn btn-view">View details</a>
 
-                <% } else if (listing.Title === 'South Goa Tour') { %>
-                    <a href="/listings/south-goa" class="btn btn-view">View details</a>
 
-                <% } else if (listing.Title === 'North Goa Tour') { %>
-                    <a href="/listings/north-goa" class="btn btn-view">View details</a>    
 
-                <% } else { %>
-                    <a href="/listings/<%= listing._id %>" class="btn btn-view">View details</a>
-                    
-                <% } %>
-                <a class="btn btn-book" 
-                    onclick="bookSingleService('<%= listing.Title %>')">
-                    Book now
-                </a>
-            </div>
-        </div>
+
+
+
+
+  <section class="gt-section">
+  <div class="gt-container">
+    
+    <!-- Section Header -->
+    <div class="gt-header">
+      <span class="gt-subtitle">What We Offer</span>
+      <h2 class="gt-title">Top Goa experiences</h2>
+      <p class="gt-desc">Pick a service — we'll confirm vehicle, timing, and fare on WhatsApp, usually within minutes.</p>
     </div>
-    <% } %>
-</div>
+
+    <!-- Cards Grid -->
+    <div class="gt-grid">
+      
+      <!-- Card 1 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-pop">POPULAR</span>
+          <img src="/images/Tempo 20 Seater.jpeg" alt="North Goa Sightseeing">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">North Goa Sightseeing</h3>
+          <p class="gt-card-text">Fort Aguada, dolphin trip, Calangute, Baga, Anjuna, Vagator and more — full day with a local driver.</p>
+          <span class="gt-card-price">Day rates on request</span>
+          <div class="gt-btn-group">
+            <a href="/listings/north-goa" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-val">BEST VALUE</span>
+          <img src="/images/temple2.jpeg" alt="South Goa Heritage Tour">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">South Goa Heritage Tour</h3>
+          <p class="gt-card-text">Old Goa churches, temples, spice plantation, Dona Paula, Miramar, Fountain house area, and boat cruise.</p>
+          <span class="gt-card-price">Full-day packages</span>
+          <div class="gt-btn-group">
+            <a href="/listings/south-goa" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-24">24/7</span>
+          <img src="/images/Innova Crysta2.jpeg" alt="Airport & Station Transfer">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">Airport & Station Transfer</h3>
+          <p class="gt-card-text">Dabolim (GOI) and Mopa — meet & greet, flight-friendly timing, sedan to Tempo Traveller.</p>
+          <span class="gt-card-price">From competitive fares</span>
+          <div class="gt-btn-group">
+            <a href="/listings/airport" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-purp">GROUPS</span>
+          <img src="/images/SML 30 Seater.jpeg" alt="Tempo & Group Travel">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">Tempo & Group Travel</h3>
+          <p class="gt-card-text">24+1 Tempo Traveller and multi-vehicle plans for families, weddings, and corporate outings.</p>
+          <span class="gt-card-price">Custom quotes</span>
+          <div class="gt-btn-group">
+            <a href="/listings/fleet" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-red">FLEXIBLE</span>
+          <img src="/images/church_gate.jpeg" alt="Custom Hours & Route">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">Custom Hours & Route</h3>
+          <p class="gt-card-text">Book by the hour and build your own day — beaches, churches, markets, or shopping.</p>
+          <span class="gt-card-price">Hourly & full day</span>
+          <div class="gt-btn-group">
+            <a href="/listings/custom" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="gt-card">
+        <div class="gt-img-box">
+          <span class="gt-badge gt-badge-teal">GOA MOMENTS</span>
+          <img src="/images/SML.jpeg" alt="Dudhsagar & day trips">
+        </div>
+        <div class="gt-card-body">
+          <h3 class="gt-card-title">Dudhsagar & day trips</h3>
+          <p class="gt-card-text">Plan waterfall and hinterland trips with safe, experienced drivers — ask us for route and timing.</p>
+          <span class="gt-card-price">Enquire for itinerary</span>
+          <div class="gt-btn-group">
+            <a href="#dudhsagar-details" class="gt-btn gt-btn-orange">View details</a>
+            <a href="/listings/booknow" class="gt-btn gt-btn-green">Book now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
 

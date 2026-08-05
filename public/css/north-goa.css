@@ -22,7 +22,7 @@
     position: relative;
     padding: 80px 0;
     /* Aapki image url yahan aayegi */
-    background-image: url('https://images.unsplash.com/photo-1623910271000-4b684cb2c8b0?q=80&w=1920'); 
+    background-image: url('/images/Tempo 20 Seater1.jpeg'); 
     background-size: cover;
     background-position: center;
 }
