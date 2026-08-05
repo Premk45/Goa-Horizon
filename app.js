@@ -35,7 +35,7 @@ app.use(methodOverride('_method'));
 
 
 // Index Route
-app.get("/listings" , async (req , res) => {
+app.get("/" , async (req , res) => {
     res.render("./listings/index.ejs");  
 });
 
