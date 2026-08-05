@@ -39,6 +39,13 @@ app.get("/" , async (req , res) => {
     res.render("./listings/index.ejs");  
 });
 
+
+// Index Route
+app.get("/listings" , async (req , res) => {
+    res.render("./listings/index.ejs");  
+});
+
+
 // New Listing Form Render Route
 app.get("/listings/new", (req, res) => {
     res.render("listings/new.ejs");
