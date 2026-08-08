@@ -422,3 +422,43 @@
     font-size: 42px;
   }
 }
+
+
+
+/* Mobile Screen Responsive Adjustments */
+@media (max-width: 768px) {
+  
+  /* --- Add this new rule for the cards --- */
+  .fleet-cards-grid {
+    display: flex;
+    flex-direction: column;
+    /* OR you can use: grid-template-columns: 1fr; */
+    gap: 20px;
+  }
+  /* --------------------------------------- */
+
+  /* Your existing mobile lightbox CSS below */
+  .lightbox-card-container {
+    width: 92vw;
+    max-height: 85vh;
+  }
+
+  .lightbox-card-container .vehicle-card img {
+    max-height: 38vh;
+  }
+
+  .lightbox-btn {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.65);
+  }
+  
+  .prev-btn { left: 10px; }
+  .next-btn { right: 10px; }
+  
+  .lightbox-close {
+    top: 15px;
+    right: 20px;
+    font-size: 42px;
+  }
+}

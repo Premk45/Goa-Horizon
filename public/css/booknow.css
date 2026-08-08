@@ -332,23 +332,50 @@
 }
 
 /* ============================
-   Responsive Design
+   Responsive Design (Updated)
    ============================ */
-/* For Tablets */
-@media (max-width: 1024px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+
+/* For Tablets and Smaller Desktop */
+@media (max-width: 992px) {
+    .booking-grid {
+        grid-template-columns: 1fr; /* Stack columns on tablets/mobile */
+        gap: 32px;
+    }
+    
+    /* Ye likhna zaroori hai taaki 500px wali fixed width hat jaye */
+    .booking-form-card, 
+    .vehicles-card {
+        width: 100%; 
+        max-width: 100%;
     }
 }
 
 /* For Mobile Phones */
 @media (max-width: 600px) {
-    .features-heading {
-        font-size: 26px;
-        margin-bottom: 32px;
+    /* Inputs ko ek ke neeche ek (vertical) karne ke liye */
+    .form-rowb, 
+    .form-rowbb {
+        grid-template-columns: 1fr !important; 
+        gap: 20px !important; 
     }
     
-    .features-grid {
-        grid-template-columns: 1fr; /* 1 column on small screens */
+    /* Buttons ko ek ke neeche ek karne ke liye */
+    .action-buttons {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Mobile par padding thodi kam karne ke liye */
+    .booking-form-card, 
+    .vehicles-card {
+        padding: 24px; 
+    }
+
+    /* Headings ko mobile ke hisaab se thoda chota karna */
+    .form-header h2 {
+        font-size: 24px;
+    }
+    
+    .vehicles-card h2 {
+        font-size: 22px;
     }
 }

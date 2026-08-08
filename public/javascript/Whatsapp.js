@@ -141,7 +141,7 @@ function BookNowOnEmail(event) {
     }
 
     // 1. Apna Email Address yahan daalein (jis par email receive karna hai)
-    const receiverEmail = "yourbusiness@email.com"; 
+    const receiverEmail = "sachinchavan9632@gmail.com"; 
 
     // 2. Email ka Subject banana
     const emailSubject = `New Booking Inquiry from ${name} - ${sub}`;
@@ -355,7 +355,7 @@ function northBookNowOnEmail(event) {
 
 
     // 1. Apna Email Address yahan daalein (jis par email receive karna hai)
-    const receiverEmail = "yourbusiness@email.com"; 
+    const receiverEmail = "sachinchavan9632@gmail.com"; 
 
     // 2. Email ka Subject banana
     const emailSubject = `New Booking Inquiry from ${name} - ${sub}`;

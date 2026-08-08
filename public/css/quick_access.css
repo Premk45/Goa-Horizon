@@ -187,3 +187,47 @@
         font-size: 1.8rem;
     }
 }
+
+
+/* --- Responsive / Mobile Styles --- */
+@media screen and (max-width: 768px) {
+    .info-card-section {
+        padding: 0 20px; /* Screen ke kinaron se space dene ke liye */
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        flex-direction: column; /* Image aur content ko upar-neeche stack karne ke liye */
+        gap: 30px; /* Beech ka gap thoda kam kiya */
+    }
+
+    .image-card, .content-side {
+        width: 100%; /* Mobile par full width lene ke liye */
+    }
+
+    .main-heading {
+        font-size: 1.8rem; /* Mobile par heading thodi chhoti ki hai */
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .features-list li {
+        font-size: 0.9rem;
+    }
+
+    .btn-group {
+        flex-direction: column; /* Buttons ko upar-neeche lagane ke liye */
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%; /* Buttons mobile screen par full width ache lagte hain */
+        text-align: center;
+        padding: 14px 28px;
+    }
+}

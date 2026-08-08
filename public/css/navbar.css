@@ -293,3 +293,80 @@ img {
         display: none; /* Mobile screen par navigation space badhane ke liye buttons hide kiye */
     }
 }
+
+
+/* --- Desktop View (Default) --- */
+.menu-toggle {
+    display: none; /* Computer/Laptop screen par hamburger icon hide rahega */
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none; /* Mobile menu default hide rahega */
+}
+
+/* --- Mobile View (Phones ke liye) --- */
+@media screen and (max-width: 768px) {
+    /* Desktop wale links aur action buttons mobile me hide kar dein */
+    .navbar-links, 
+    .navbar-actions {
+        display: none; 
+    }
+
+    /* Hamburger icon ko mobile par show karein */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Mobile Menu ka Design */
+    .mobile-menu {
+        position: absolute;
+        top: 100%; /* Navbar ke theek niche */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Menu ka background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        padding: 10px 0;
+        z-index: 1000;
+        display: none; /* Jab tak button na dabe, hide rakhein */
+    }
+
+    /* Jab JS se 'show' class add hogi tab menu dikhega */
+    .mobile-menu.show {
+        display: flex !important;
+    }
+
+    /* Mobile menu ke andar ke links ka design */
+    .mobile-menu a, 
+    .mobile-menu button {
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0; /* Links ke beech me line */
+        background: none;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }
+
+    /* Book Now button ko thoda alag dikhane ke liye (optional) */
+    .mobile-menu .mobile-btn {
+        color: white;
+        background-color: #ff4a4a;
+        margin: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        width: 325px !important;
+    }
+}
+
+
+.scrolled #menuToggle {
+    color: black !important;
+}

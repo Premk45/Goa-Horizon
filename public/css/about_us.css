@@ -221,7 +221,7 @@
   background-color: #ffffff;
   color: #2bb3ed;
   border: 2px solid #ffffff;
-  width: 100px !important;
+  /* width: 100px !important; */
 }
 
 .btn_white:hover {

@@ -1292,3 +1292,360 @@
 .gt-card:hover .gt-img-box img {
   transform: scale(1.08); /* फोटो को 8% ज़ूम करेगा */
 }
+
+
+
+
+
+
+
+
+
+/* Scroll space */
+.scroll-space {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #333;
+}
+
+
+    /* Card Container Layout */
+.cards-container {
+    display: grid;
+    
+    /* YAHAN CHANGE KIYA HAI: Ek row me sirf 3 cards dikhane ke liye */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    gap: 30px; 
+    max-width: 100%;
+    /* margin: 40px auto; */
+    padding: 20px;
+    padding-left: 60px;
+    background-color: #f5f6f9; 
+}
+
+
+/* Individual Card Design - Permanent 3D Style */
+.travel-card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    width: 350px;
+    /* YAHAN CHANGE HAI: Permanent Layered 3D Shadow */
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.12), 
+        0 4px 8px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.02); /* Ek bahut halka sa border jaisa outline 3D shape ke liye */
+        
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    /* Flat border hata di hai taaki 3D shadow clearly dikhe */
+    border: none; 
+    
+    opacity: 0; 
+    transform: scale(0.5); 
+}
+
+.card-image-box {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 160px;
+    object-fit:contain; 
+}
+
+.card-title {
+    text-align: center;
+    padding: 5px 10px 15px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a2b4c; 
+    text-transform: uppercase;
+}
+
+/* Footer Buttons */
+.card-footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+    border-radius: 0 !important;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    color: white;
+}
+
+.btn-book {
+    background-color: #eef5fb; 
+    color: #333;
+}
+
+.btn-book i {
+    color: #25d366; 
+    font-size: 16px;
+}
+
+.btn-call {
+    background-color: #00a8ff !important; 
+    color: #ffffff;
+}
+
+/* .btn-call i {
+    color: #ffffff;
+} */
+
+/* SCROLL ZOOM IN - ZOOM OUT ANIMATION */
+@keyframes zoomInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.08); 
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
+.travel-card.show-card {
+    animation: zoomInOut 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.travel-card:nth-child(1).show-card { animation-delay: 0.1s; }
+.travel-card:nth-child(2).show-card { animation-delay: 0.2s; }
+.travel-card:nth-child(3).show-card { animation-delay: 0.3s; }
+.travel-card:nth-child(4).show-card { animation-delay: 0.4s; }
+
+/* ================================================= */
+/* MOBILE VIEW (Single Card)                         */
+/* ================================================= */
+@media screen and (max-width: 768px) {
+    .cards-container {
+        /* Mobile me force karke 1 column banaya */
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+    }
+    
+    .travel-card {
+        max-width: 100%; /* Card puri screen space lega */
+    }
+}
+
+
+
+/* Fleet Heading Styling */
+.fleet-heading {
+    background-color: #f5f6f9; 
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* margin-bottom: 20px; */
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.fleet-heading p {
+    font-size: 14px;
+    color: lightblue !important;
+    letter-spacing: 3px; /* Words ke beech me gap (Photo jaisa) */
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.fleet-heading h2{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #1a2b4c !important; /* Dark navy blue / blackish color */
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0;
+}
+
+
+.btnm:hover{
+    background-color:blue !important;
+}
+
+
+
+
+
+/* --- Overlay for the 6th Card --- */
+.see-more-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.see-more-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Dark transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: background 0.3s ease;
+    border-radius: inherit; /* Aapki card ki border-radius maintain rahegi */
+}
+
+.see-more-card:hover .see-more-overlay {
+    background: rgba(0, 0, 0, 0.45); /* Hover par thoda light hoga */
+}
+
+/* --- Full Screen Gallery Modal --- */
+.full-gallery-modal {
+    display: none; /* By default hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* Ya #000000 agar dark theme chahiye */
+    z-index: 999999;
+    flex-direction: column;
+    overflow-y: auto; /* Scroll allow karne ke liye */
+}
+
+/* Jab active class add hogi tab dikhega aur zoom out/fade in hoke aayega */
+.full-gallery-modal.show-modal {
+    display: flex;
+    animation: zoomOutEffect 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+@keyframes zoomOutEffect {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1a3c40;
+}
+
+.close-gallery {
+    font-size: 45px;
+    font-weight: 300;
+    color: #000;
+    cursor: pointer;
+    line-height: 0.8;
+    transition: color 0.2s;
+}
+
+.close-gallery:hover {
+    color: #ff4d4d;
+}
+
+/* Modal Grid Styling */
+.modal-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modal-gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.modal-gallery-grid img:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile Adjustments for Modal */
+@media (max-width: 768px) {
+    .modal-header { padding: 15px 20px; }
+    .modal-gallery-grid { padding: 20px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .modal-gallery-grid img { height: 180px; }
+}
+
+
+
+
+/* 3D Box Styling for Ride Item */
+.ride-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff; /* Background color dena zaroori hai shadow effects ke liye */
+    
+    /* 3D Box Effect - Ye shadow card ko pop out karega aur neeche ek 3D lip dega */
+    box-shadow: 
+        0px 10px 20px rgba(0, 0, 0, 0.15),        /* Bada shadow depth ke liye */
+        0px 3px 6px rgba(0, 0, 0, 0.10),          /* Paas ka shadow */
+        inset 0px -5px 0px rgba(0, 0, 0, 0.08);   /* Inset shadow se bottom ka 3D base banega */
+        
+    /* Kisi bhi purane hover/animation effect ko block karne ke liye */
+    transition: none !important; 
+    transform: none !important;
+    cursor: default; /* Pointer cursor ko normal arrow bana dega */
+}
+
+.ride-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover par koi bhi change nahi hoga, card waisa ka waisa hi rahega */
+.ride-item:hover {
+    transform: none !important;
+    box-shadow: 
+        0px 10px 20px rgba(0, 0, 0, 0.15),        
+        0px 3px 6px rgba(0, 0, 0, 0.10),          
+        inset 0px -5px 0px rgba(0, 0, 0, 0.08) !important;
+}
+
+.ride-item:hover img {
+    transform: none !important; /* Image zoom in/out effect ko rokne ke liye */
+}

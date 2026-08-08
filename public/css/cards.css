@@ -157,3 +157,37 @@
         flex: 1 1 100%;    /* Mobile par 1 row me 1 hi card dikhega */
     }
 }
+
+
+/* Mobile view ke liye Media Query */
+@media screen and (max-width: 768px) {
+    .temple-container {
+        flex-direction: column; /* Elements ko upar-niche karta hai */
+        align-items: center; /* Content ko center align karne ke liye */
+        padding: 0 15px; /* Thodi side spacing ke liye */
+    }
+
+    .image-card {
+        margin-right: 0; /* Desktop ka margin hatana zaroori hai */
+        margin-bottom: 25px; /* Image ke niche thoda gap dene ke liye */
+        width: 100%; /* Phone ki full width lene ke liye */
+    }
+
+    .image-card img {
+        width: 100%; /* Image ko device screen ke hisaab se fit karne ke liye */
+        height: auto;
+    }
+
+    .content-side {
+        width: 100%; /* Content ko poori jagah dene ke liye */
+        text-align: center; /* Text aur buttons ko center mein dikhane ke liye (optional) */
+    }
+
+    /* Buttons ko mobile par properly align karne ke liye */
+    .btn-group {
+        display: flex;
+        flex-direction: column; /* Buttons bhi ek ke niche ek dikhenge */
+        gap: 15px; /* Buttons ke beech me thoda space */
+        width: 100%;
+    }
+}

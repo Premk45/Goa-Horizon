@@ -68,3 +68,54 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+
+
+
+/// Jab pura page load ho jaye, tabhi ye script chale
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-card');
+            } else {
+                entry.target.classList.remove('show-card'); 
+            }
+        });
+    }, {
+        threshold: 0.2 
+    });
+
+    // Cards ko select karna
+    const cards = document.querySelectorAll('.travel-card');
+    
+    // Agar cards mil gaye page pe, toh observe karna shuru karo
+    if(cards.length > 0) {
+        cards.forEach((card) => {
+            observer.observe(card);
+        });
+    } else {
+        console.log("Cards nahi mile DOM mein.");
+    }
+
+});
+
+
+
+
+
+function openFullGallery() {
+    const modal = document.getElementById('fullGalleryModal');
+    modal.classList.add('show-modal');
+    // Body ka scroll band kar dete hain taaki piche page scroll na ho
+    document.body.style.overflow = 'hidden'; 
+}
+
+function closeFullGallery() {
+    const modal = document.getElementById('fullGalleryModal');
+    modal.classList.remove('show-modal');
+    // Body ka scroll wapas chalu kar dete hain
+    document.body.style.overflow = 'auto'; 
+}
