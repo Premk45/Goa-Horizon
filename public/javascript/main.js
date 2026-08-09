@@ -119,3 +119,30 @@ function closeFullGallery() {
     // Body ka scroll wapas chalu kar dete hain
     document.body.style.overflow = 'auto'; 
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    var swiper = new Swiper(".goaswiper", {
+        // Mobile mein sirf 1 card dikhega
+        slidesPerView: 1, 
+        spaceBetween: 20,
+        
+        // Next aur Prev arrow buttons set karne ke liye
+        navigation: {
+            nextEl: ".goaswiper-next",
+            prevEl: ".goaswiper-prev",
+        },
+        
+        // Laptop aur PC views
+        breakpoints: {
+            768: {
+                slidesPerView: 3,     // Ek sath 3 cards dikhenge
+                spaceBetween: 30,     // Cards ke bich thoda gap
+                slidesPerGroup: 1     // Ek click me 1 card aage badhega
+            },
+        },
+    });
+    
+});

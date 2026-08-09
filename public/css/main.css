@@ -1649,3 +1649,142 @@
 .ride-item:hover img {
     transform: none !important; /* Image zoom in/out effect ko rokne ke liye */
 }
+
+
+
+
+
+/* Background & Reset */
+.goaswiper-bg-section {
+    background-color: #e6f4f9; 
+    padding: 60px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Headings */
+.goaswiper-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.goaswiper-header h4 {
+    color: #0fb1f2;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.goaswiper-header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #000;
+}
+
+/* Main Swiper Container */
+.goaswiper {
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px 45px !important; /* Arrows (sign) ke liye jagah banayega */
+    box-sizing: border-box;
+}
+
+/* Card Styling */
+.goaswiper-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 25px;
+    height: 600px;
+    
+    /* --- Naya Flexbox Code Add Kiya Hai --- */
+    display: flex;
+    flex-direction: column; 
+}
+
+.goaswiper-card-header {
+    background-color: #0fb1f2;
+    color: #fff;
+    padding: 20px 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Card Body (Ensure body takes remaining space) */
+.goaswiper-card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1; /* Baaki bachi hui height ko fill karega */
+}
+
+/* List Styling */
+.goaswiper-card-body ul {
+    list-style: none;
+    padding: 0;
+    
+    /* margin-bottom ko 'auto' kiya hai taaki neeche ke elements bottom me push ho jayein */
+    margin: 20px 30px auto 30px; 
+}
+
+
+.goaswiper-card-body ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 14px;
+}
+
+.goaswiper-card-body ul li:last-child {
+    border-bottom: none;
+}
+
+/* Button & Text Styling */
+.goaswiper-btn {
+    background-color: #0fb1f2;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    width: 80%;
+}
+
+.goaswiper-btn:hover {
+    background-color: #0c9dd6;
+}
+
+.goaswiper-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Arrows Styling Override */
+.goaswiper-next, 
+.goaswiper-prev {
+    color: #000 !important; 
+    transform: scale(0.6);
+}
+
+/* Arrows Styling: Mobile par hide rahenge */
+.goaswiper-next, 
+.goaswiper-prev {
+    display: none !important; /* Mobile ke liye gayab */
+}
+
+/* Jab screen size 768px (Tablet/Desktop) ya usse bada ho, tabhi arrows dikhenge */
+@media (min-width: 768px) {
+    .goaswiper-next, 
+    .goaswiper-prev {
+        display: flex !important; /* Desktop par wapas dikhayega */
+        color: #000 !important; 
+        transform: scale(0.6);
+    }
+}
