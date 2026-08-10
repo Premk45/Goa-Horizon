@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<section class="ride-section">
+    <div class="ride-container">
+        
+        <!-- Header Section -->
+        <div class="ride-header">
+            <h2 class="ride-title">Take A Look At Mysore</h2>
+            <a href="/listings/booknow" class="view-all-btn">Book Now</a>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="ride-grid">
+            <!-- Ride Item 1 -->
+            <div class="ride-item">
+                <img src="/images/top-view.jpeg" alt="Bus">
+            </div>
+            <!-- Ride Item 2 -->
+            <div class="ride-item">
+                <img src="/images/somnath.jpeg" alt="Mini Bus">
+            </div>
+            <!-- Ride Item 3 -->
+            <div class="ride-item">
+                <img src="/images/M_Mahal.jpeg" alt="Tempo Traveller">
+            </div>
+            <!-- Ride Item 4 -->
+            <div class="ride-item">
+                <img src="/images/murthi.jpeg" alt="Tempo Traveller">
+            </div>
+            <!-- Ride Item 5 -->
+            <div class="ride-item">
+                <img src="/images/nandi.jpeg" alt="Innova Crysta">
+            </div>
+
+            <!-- Ride Item 6 (Special Card with + Icon) -->
+            <div class="ride-item see-more-card" onclick="openFullGallery()">
+                <img src="/images/somnath.jpeg" alt="More Vehicles">
+                <!-- Yeh overlay hai jo image ke upar dark layer aur text dikhayega -->
+                <div class="see-more-overlay">
+                    <span>+ Explore All</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FULL SCREEN GALLERY MODAL (Hide by default) -->
+<div id="fullGalleryModal" class="full-gallery-modal">
+    <div class="modal-header">
+        <h3>All Available Vehicles</h3>
+        <span class="close-gallery" onclick="closeFullGallery()">&times;</span>
+    </div>
+    
+    <!-- Yahan aap apni saari gaadiyan (10, 20 jitni bhi hain) list kar sakte hain -->
+    <div class="modal-gallery-grid">
+        <img src="/images/top-view.jpeg" alt="Bus">
+        <img src="/images/somnath.jpeg" alt="Mini Bus">
+        <img src="/images/M_Mahal.jpeg" alt="Tempo Traveller">
+        <img src="/images/murthi.jpeg" alt="Tempo Traveller">
+        <img src="/images/nandi.jpeg" alt="Innova Crysta">
+        <img src="/images/parrot.jpeg" alt="Innova Crysta">
+        <!-- Nayi add ki hui gaadiyan -->
+        <img src="/images/peacock.jpeg" alt="More Vehicles">
+        <img src="/images/sky.jpeg" alt="More Vehicles">
+        <img src="/images/snake.jpeg" alt="More Vehicles">
+        <img src="/images/somnath.jpeg" alt="More Vehicles">
+        <img src="/images/zoo.jpeg" alt="More Vehicles">
+            
+    </div>
+</div>
+
+
+
+<div class="swiper goaswiper">
+<div class="swiper-wrapper">
+<!-- Card 1 -->
+<div class="swiper-slide">
+    <div class="goaswiper-card">
+        <div class="goaswiper-card-header">Top Tourist Places In Mysore</div>
+        <div class="goaswiper-card-body">
+            <ul>
+                <li>Mysore Palace</li>
+                <li>Brindavan Gardens</li>
+                <li>Mysore Zoo</li>
+                <li>Chamundi Hill</li>
+                <li>Jaganmohan Palace</li>
+                <li>Lalit Mahal Palace</li>
+                <li>Somanathpur Temple</li>
+                <li>Rail Museum</li>
+            </ul>
+            <button class="goaswiper-btn" 
+                onclick="bookSingleService(`Hi , I'm Intrested In MYSORE TOUR`)"
+            >
+                BOOK NOW
+            </button>
+            <p class="goaswiper-note">You can WhatsApp us with same no</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>

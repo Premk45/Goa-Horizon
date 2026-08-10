@@ -129,6 +129,12 @@ app.get("/listings/north-goa" , async (req , res) => {
 
 
 
+// Horizon North Goa Route
+app.get("/listings/mysore" , async (req , res) => {
+    res.render("./listings/mysore.ejs"); 
+});
+
+
 // app.get("/listings/:id" , async (req , res) => {
 //     let {id} = req.params;
 //     console.log(id);
