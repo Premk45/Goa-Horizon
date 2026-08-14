@@ -26,6 +26,10 @@
     background-size: cover;
     background-position: center;
 }
+
+.railway{
+    background-image: url('/images/train.jpg') !important;
+}
 .goa-hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to right, rgba(34, 142, 175, 0.9), rgba(43, 107, 138, 0.9));
