@@ -1,7 +1,15 @@
+// 1. Sabse uper top line par ye add karein (Production me dotenv ignore hoga)
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
+
+
 const express = require('express');
 const app = express();
+const Review = require('./models/Review');
 const mongoose = require('mongoose');
-const Listing = require("./models/listings");
+// const Listing = require("./models/listings");
 const ejsMate = require("ejs-mate");
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -18,19 +26,21 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(methodOverride('_method'));
 
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/Horizon";
 
-// main()
-//     .then(() => {
-//         console.log("Connected To Horizon");
-// })
-//     .catch((err) => {
-//         console.log(err);
-// });
 
-// async function main() {
-//     await mongoose.connect(MONGO_URL);
-// };
+// 2. Database URL Setup (Live DB pehle check karega, nahi toh Local DB use karega)
+const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/Horizon";
+
+// 3. Mongoose Connection
+mongoose.connect(dbUrl)
+  .then(() => {
+    console.log("Connected to DB successfully!");
+  })
+  .catch((err) => {
+    console.log("DB Connection Error:", err);
+  });
+
+
 
 
 
@@ -87,11 +97,6 @@ app.get("/listings/fleet" , async (req , res) => {
     res.render("./listings/our_fleet.ejs");  
 });
 
-
-// About Horizon Route
-app.get("/listings/review" , async (req , res) => {
-    res.render("./listings/review.ejs");  
-});
 
 
 // About Horizon Contact Us Route
@@ -184,6 +189,37 @@ app.get("/listings/railway" , async (req , res) => {
 //      console.log("Sample Listing Was Saved");
 //      res.send('Testing Successfull!');
 // })
+
+
+
+
+// 1. Reviews Load aur Render karne ke liye
+app.get("/listings/review", async (req, res) => {
+  try {
+    const reviews = await Review.find().sort({ createdAt: -1 });
+    res.render("listings/review.ejs", { reviews });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Database Error");
+  }
+});
+
+// 2. Naya Review Save karne ke liye
+app.post("/listings/review", async (req, res) => {
+    console.log(req.body);
+  try {
+    const { name, location, rating, comment , tour } = req.body;
+    await Review.create({ name, location, rating, comment , tour });
+    res.redirect("/listings/review");
+  } catch (err) {
+    console.log(err);
+    res.status(400).send("Error saving review");
+  }
+});
+
+
+
+
 
 app.listen(8000 , () => {
     console.log("The Server is Listning");

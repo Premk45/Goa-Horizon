@@ -404,3 +404,406 @@
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+/* Container & Wrapper */
+.rform-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.rform-reviews-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Form Card Base */
+/* Permanent 3D Form Card */
+.rform-card {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 2px solid #cbd5e1;
+  /* Multi-layered Permanent 3D Shadow */
+  box-shadow: 
+    0 10px 0 0 #cbd5e1,
+    0 15px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px;
+}
+
+
+
+/* Inputs Permanent Inset 3D */
+.rform-input,
+.rform-select,
+.rform-textarea {
+  border: 2px solid #cbd5e1;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Button Permanent 3D Pop-Out */
+.rform-btn-submit {
+  background-color: #ffc107;
+  border: 2px solid #d39e00;
+  box-shadow: 0 5px 0 0 #d39e00;
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+.rform-title {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #1a202c;
+}
+
+/* Form Layout Grid */
+.rform-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rform-col-6 {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 250px;
+}
+
+.rform-col-12 {
+  flex: 1 1 100%;
+}
+
+/* Inputs, Select & Textarea */
+.rform-input,
+.rform-select,
+.rform-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.rform-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.rform-input:focus,
+.rform-select:focus,
+.rform-textarea:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.25);
+}
+
+/* Submit Button */
+.rform-btn-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ffc107;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.rform-btn-submit:hover {
+  background-color: #e0a800;
+}
+
+.rform-btn-submit:active {
+  transform: scale(0.98);
+}
+
+/* Reviews Grid */
+.rform-reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.rform-review-col {
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 280px;
+  display: flex;
+}
+
+/* Review Card Styles */
+.rform-review-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border-top: 4px solid #2b82cb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rform-review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.rform-stars {
+  color: #ffc107;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.rform-comment {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+/* Profile Footer Section */
+.rform-user-profile {
+  display: flex;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.rform-avatar {
+  width: 44px;
+  height: 44px;
+  background-color: #ffc107;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);
+}
+
+.rform-user-name {
+  margin: 0;
+  font-weight: 700;
+  color: #1a202c;
+  font-size: 0.95rem;
+}
+
+.rform-user-location {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+
+/* Sightseeing Tour Badge */
+.rform-tour-badge {
+  display: inline-block;
+  background-color: #fff8e1;
+  color: #b78103;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+
+/* Rounded Pill Badge Tag (Image Matching) */
+.rform-tour-tag {
+  display: inline-block;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-top: 12px;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Containers Padding Fix */
+  .rform-container,
+  .rform-reviews-container {
+    margin: 1.25rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .rform-card {
+    padding: 1.25rem;
+  }
+
+  /* Form inputs Stack vertically on mobile */
+  .rform-col-6 {
+    flex: 1 1 100%;
+  }
+
+  /* Reviews Cards Stack vertically on mobile */
+  .rform-review-col {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .rform-review-card {
+    padding: 1.25rem;
+  }
+
+  .rform-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile Input Font Fix to avoid iOS auto-zoom */
+  .rform-input,
+  .rform-select,
+  .rform-textarea {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+/* QR Code */
+/* 3D Wrapper (Bina Hover Ke Permanent 3D Card Look) */
+    .qr-wrapper {
+      background: #ffffff;
+      max-width: 280px;
+      padding: 24px 20px;
+      border-radius: 20px;
+      text-align: center;
+      justify-self: center;
+      margin-bottom: 20px;
+      
+      
+      /* 3D Tilt Angle - Bina hover ke constant dikhega */
+      transform: perspective(1000px) rotateX(12deg) rotateY(-10deg) rotateZ(2deg);
+      transform-style: preserve-3d;
+      
+      /* 3D Elevation Shadows (Z-axis visual effect) */
+      box-shadow: 
+        -15px 20px 30px rgba(0, 0, 0, 0.15),
+        -5px 5px 10px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    /* Heading with Left/Right Divider Lines */
+    .qr-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .qr-title-container::before,
+    .qr-title-container::after {
+      content: "";
+      flex: 1;
+      border-bottom: 2px solid #e0e0e0;
+      margin: 0 10px;
+    }
+
+    .qr-heading {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    /* QR Code Image inside Card */
+    .qr_code {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fafafa;
+      padding: 8px;
+      border: 1px solid #eee;
+      
+      /* Card ke upar floating pop-up effect */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    }
+
+.qr-heading {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
+  
+  /* Bottom Horizontal Line */
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px; /* Text aur line ke beech ki jagah */
+}
+
+.qr_head{
+    justify-self: center;
+    align-items: center;
+}
+
+.qr-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #007bff, transparent);
+  margin: 30px auto;
+  width: 70%;
+}
+
+
+
+/* Parent Layout Wrapper */
+.review-layout-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Dono ko vertically center rakhta hai */
+  gap: 40px;          /* Form aur QR ke beech ka space */
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Form ko width dena */
+.rform-container {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Mobile Screens (Responsive Adjustment) */
+@media (max-width: 768px) {
+  .review-layout-wrapper {
+    flex-direction: column; /* Mobile par ek ke niche ek aayenge */
+    gap: 30px;
+  }
+}
