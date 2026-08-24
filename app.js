@@ -28,16 +28,23 @@ app.use(methodOverride('_method'));
 
 
 
-// 2. Database URL Setup (Live DB pehle check karega, nahi toh Local DB use karega)
-const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/Horizon";
+// 2. Database URL Setup
+const dbUrl = process.env.ATLASDB_URL;
 
-// 3. Mongoose Connection
-mongoose.connect(dbUrl)
+// Debugging ke liye check karein ki Render URL read kar pa raha hai ya nahi
+if (!dbUrl) {
+  console.log("CRITICAL ERROR: ATLASDB_URL is not defined in Environment Variables!");
+}
+
+// 3. Mongoose Connection Options ke sath
+mongoose.connect(dbUrl || "mongodb://127.0.0.1:27017/Horizon", {
+  serverSelectionTimeoutMS: 5000 // 5 sec me timeout ho jayega agar connect nahi hua
+})
   .then(() => {
-    console.log("Connected to DB successfully!");
+    console.log("Connected to Live DB successfully!");
   })
   .catch((err) => {
-    console.log("DB Connection Error:", err);
+    console.log("DB Connection Error Details:", err.message);
   });
 
 
