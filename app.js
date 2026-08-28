@@ -1,4 +1,4 @@
-// 1. Sabse uper top line par ye add karein (Production me dotenv ignore hoga)
+// ENV
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 }
